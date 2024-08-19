@@ -1,0 +1,30 @@
+1 - sunucu ve lider makineye ssh paketleri yüklenmeli
+      service ssh status
+      sudo apt-get install openssh-server
+      ssh kullaniciadi@hostadiyadaIP
+
+2 - dil 
+     locale
+     dpkg-reconfigure locales     // dil english'e değiştirelebilir
+     reboot                                  // dil değiştirilecekse makine reboot edilmeli
+
+3 - PermitRootLogin
+     nano /etc/ssh/sshd_config
+     PermitRootLogin yes
+     
+     /etc/init.d/ssh restart
+
+4 - exit ile root'tan çık
+     ssh root@172.20.10.5
+
+5 - liderahenk kurulum
+     sudo apt-get install python3-paramiko python3-pyqt5 python3-pip python3-psutil xterm 
+     sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+     pip install mysql-connector-python argon2-cffi
+     sudo apt-get install git
+     git clone https://github.com/Pardus-LiderAhenk/lider-ahenk-installer.git
+
+     cd lider-ahenk-installer/src/
+     python3 app.py
+
+     

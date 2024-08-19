@@ -1,0 +1,253 @@
+ahenk4@pardus4:~$        //  ~$ = normal kullanıcı demek
+~                                          // /home/ahenk4/     demektir 
+#                                          // yönetici kullanıcı
+
+
+bash                // bash şeridine geçer  ahenk4@pardus4:~$      ---- kullanıcıadı@hostname
+whoami          // ahenk4
+hostname      // pardus4
+
+Birkaç karakter yazıp tab tuşuna (bir kere) basılırsa (tek alternatif varsa) otomatik tamamlama yapar
+tab tuşuna iki defa basılırsa yazılan karakterler ile başlayan dosya/dizinleri (birden fazla alternatif varsa) listeler
+cp 123 /home/    // tab tab yapılırsa tüm kullanıcılar listelenir
+
+\ karakter özelliğini belirleme
+echo 7*7      =   expr 7*7         // 7*7
+echo 7 \* 7   =  expr 7 \* 7     // 49
+
+C:\            // C diskinin kökü
+f:\            // f diskinin kökü    // windowsta her diskin bir kökü var ama linuxta böyle bir şey yok. Bir tane kök var o da / dir
+ls /           // kök dizini listele
+tree /      // kök dizinden ağaç yapısını göster // uzun sürer // çıkmak için ctrl+c
+
+komut --help         // komut kullanımı ile ilgili yardım
+
+ls
+ls -l                                   // detaylı listeleme    l=link, d=directory
+ls -l -h                              // boyut kısımları 4096 değil de 4K olarak okunaklı gösterir
+(-h)     // hem yardım hem boyutlandırma
+
+ls -R                // içinde dosya/klasör olan dizinlerin içerisini de listeler
+(-R) = sıralamayı tersine de çevirir alt dizinleri de gösterir
+ls -lS           // size göre listele (büyükten küçüğe)
+ls -lSr          // size göre listele (küçükten büyüğe)
+
+izinler             user      grup          size      tarih       name
+-rw-r--r--     1 ahenk4 ahenk4       0 ağu 18 22:51 10.txt                 // ahenk4 ahenk4 = sahip group // dosya   (-rw-r--r-- = user-gruop-diğerkullanıcılar)
+drwxr-xr-x- 2 ahenk4 ahenk4 4096 ağu 18 22:32 istanbul             // klasör
+
+ls -a  = ls --all                  // gizli dosyaları(. ile başlayanlar) da listele  
+ls -a -l  = ls -al = ls -la     // hem gizli hem detaylı listele
+.                                       // aktif dizin
+..                                      // bir üst dizin
+ls de*                              // de ile başlayanları listeler
+ls /home                        // tüm kullanıcılar
+ls ~/bilkent                    // evimdeki bilkent klasörünü listele
+ls ~bilkent                     // bilkent kullanıcısının evi
+ls ~/TEST/ist/m*         
+sudo ls ~deneme         //
+
+
+clear
+pwd                      // aktif dizin
+exit                       // root'tan çık  // 2. defa terminali kapat
+history                 // geçmiş komut listesi
+!sıra_numarası   // belirtilen sıradaki (!33) komutu çalıştırır
+!-sayi                   // sondan (sayi). komutu çalıştır
+!-1        = !!          // son komut
+ctrl+R                  // listeden komut arama
+history | grep apt   // apt olan komutları göster
+
+
+cd klasör_adi                 
+cd ../     = cd ..  = cd -      // üst dizine git
+cd ../klasör             // üste git o dizindeki klasör  
+cd ../..                     // 2 üst dizine git
+cd ../../klasör         // iki üste git o dizindeki klasör 
+cd /tmp                  // tmp klasörüne git
+cd ~bilkent            // bilkent kullanıcısının evine git
+cd enter       // evine geri dön   // ~$
+cd -             // geri git
+cd /            // köke git                 //   /$
+
+tree                         // ağaç yapısı ile gösterim
+tree ../..                  // iki üst dizinden ağaç yapısına bak
+mkdir klasör_adi
+mkdir klasör adi              // hem klasör hem de adi adında iki klasör oluşturur
+mkdir "klasör adi"   = mkdir klasör\ adi   
+mkdir mevcut_klasör_adi/iç_klasör_adi
+
+touch dosya_adi    == touch dosya_adi.txt
+touch dosya\ dosya_adi.txt     // dosya dosya_adi.txt  
+touch mevcut_klasör_adi/dosya_adi
+touch .dosya_adi                         // gizli dosya oluşturur
+touch {a..z}.txt
+touch {1..10}.txt
+
+cp dosya_adi path
+cp 123 ../../ato/lo/  =  cp 123 ../../ato/lo      // 123 isimli dosyayı 2 üst dizin altındaki ato altındaki lo dizinine kopyala
+./../ato/lo/                                        =  göreceli path
+/home/ahenk4/Masaüstü/  =  ~/Masaüstü/         = mutlak path
+cp ~/TEST/maas ~/TEST/ist     // herhangi bir kullanıcının evindeki TEST klasöründeki maas isimli dosyayı al gene aynı path'teki ist klasörüne kopyala
+         
+
+rm dosya_adi             // dosya siler
+rm dosya1 dosya2.txt  // her iki dosyayı da siler
+rm dosya\ dosya.txt  // dosya dosya.txt adındaki dosyayı siler
+
+rmdir boş_klasör
+rm -r dosya    veya rm -r dolu_klasör
+
+mv dosya1 dosya2    // dosya1'i keser dosya2'e yapıştırır = dosya isim değişikliği gibi de yapar
+mv dosya .dosya      // dosyası gizli yapar
+mv *.txt ist               // tüm .txt dosyaları kes ist klasörüne yapıştır 
+mv ?a* ist                 // 2. harfi a olan tüm dosyaları/klasörleri kes ist klasörüne yapıştır
+mv ????? ist             // tüm beş harfli dosyaları/klasörleri kes ist klasörüne yapıştır
+mv ankara/[0-9]*.txt ist    // rakamla başlayan txt dosyaları kes ist klaörüne yapıştır
+[a-zA-Z]*          // harfle başlayan 
+[^a-zA-Z]*        // harfle başlamayan 
+[09]*                  // ilk harfi 0 veya 9 olan 
+[lt!]*                  // ilk harfi l, t veya ! olan 
+
+echo "deneme yazı" > dosya.txt  = echo "deneme yazı" 1> dosya.txt     // dosya mevcut ise içeriği ekler, mevcut değilse belirtilen içerikli bir dosya oluşturur
+echo "içerik" 2> dosya_adi                // varsa hata hata dosyasına gönderri
+
+echo $?                                                 // son komutun sonucu
+0       // komut çalıştı
+2       // syntax hatası
+127   // komut yok hatası
+100  // yetki hatası
+
+
+echo "deneme yazı" >> dosya.txt        // dosyaya ekleme yapar
+ls > liste_dosyasi 2> hatadosyasi          // dizinleri belirtilen dosyaya atar hata varsa da hata dosyasına atar
+ls > liste_dosyasi 2>> hatadosyasi       // dizinleri belirtilen dosyaya atar hata varsa da hata dosyasına ekler
+
+cat dosyaadi                       // dosyayı okur
+cat dosya1 dosya2             // dosya2 son satırdan dosya1'e ekler ama kaydetmez
+cat dosya1 dosya2   > birleştirilmişdosya          // dosya2'i son satırdan dosya1'e ekler ve birleştirilmişdosya'ya kaydeder
+touch abc.pdf
+touch 123.pdf 
+cat abc.pdf  123.pdf > yeni.pdf        // iki pdf'i birleştirir ve yeni.pdf dosyası oluşturur ve oraya yazar.
+
+sort dosya                              // dosya içeriğini sıralar
+sort < dosya                          // dosya içeriğini sıralar
+
+gcc -o merhaba hello.c        // hello.c'yi merhaba bash'ine derler
+./merhaba                             // merhaba bash dosyasını çalıştırır
+
+seq 10 > sayi                          // 10' kadar yaz ve sayi dosyasına yazdır
+
+ls ; pwd ; whoami                 // komutların birlikte kullanımı
+ls || pwd || whoami           // benzer komutların çalışması biri doğru çalışırsa diğerlerini çalıştırmaz
+ls && pwd && whoami       // hepsi hatasız çalışırsa çalışır bir tanesi hata verirse çıktı vermez
+ls && pwd || whoami         
+
+history | more                      // sayfalama yapma     // sayfalamdan çıkmak için ctrl+c sonra ctrl+x
+history | less                         // ctrl+z ile çıkış yapılır
+// | bir komutun çıktısını diğer bir komuta göndermek
+
+cat /etc/passwd | grep ahenk4            // grep filtreleme yapar. /etc/passwd sonucu karışık bir liste döndürecektir. Ama grep ahenk4 bu filtreleme ile içinde ahenk4 geçen satırları getir.
+
+cat sayi | paste -s -d+ | bc                // sayi dosyasindaki sayıları paste ile sırala -s ile yan yana yazdır, -d ile birleştir, -d+ ile aralarına + koy | bc ile hesap makinesine gönder
+
+man ls                
+
+
+free                      // disk boyutları byte olarak verir
+free -h                 // disk boyutları byte'ları dönüştürür
+
+df -h                // disk free
+
+man 1 passwd = man passwd     // kullanıcı şifre değiştirme
+man 5 passwd                 // dosya biçimi yardımı
+
+man man       // kılavuzun kılavuzu
+
+whereis ls     // ls dosyası(sistem dosyaları) nerde
+
+alias                // takma isimler (kısayollar)
+alias --help    // alias yardım
+alias sinan="komut"
+unalias sinan="komut"
+
+apt install manpages-            // manpages- tüm dosyaları
+
+whatis ls         // komut açıklamasını(tanım) getirir
+
+sudo apt install sl         // stream lokomotif (bir animasyon)
+sudo apt autoremove  // silme
+
+file dosya      // dosya türü
+
+type komut         // komut türü veya path
+
+man -k parola     // parola ilgili komutları listeler
+apropos parola   // parola ilgili komutları listeler
+
+ln -s ist/hata HATA       // link oluşturma
+
+sudo chown sinan dosya    // dosyanın yeni sahibi
+ 
+// GUI = Görünüm/Detaylı Liste Şeklinde Göster
+
+chmod +x main.py    // çalıştırma yetkisi ama tüm userlar
+chmod -x main.py    // çalıştrırma yetkiyi al
+chmod u-x main.py    // sadece user çalıştırabilir
+chmod ug-x main.py    // user ve grup çalıştırabilir
+// rwx   = 111 = 7       //1'ler binary
+// rw-    = 110 = 6
+// r--      = 100 = 4
+// r-x      = 101 = 5
+// -w-     = 010 = 2
+chmod 524 a.sh    (owner-group-other)
+umask            ///  =  0022(default değer)    //666- 022 = 422  = rw-r--r-- 
+umask 666    ///    umask değiştirlirse
+ls -l /usr/bin/passwd   // -rwsr-xr-x      s=set edebilme
+// drwxrwxrwt                  // tmp dosyas // herkes herşeyi yapabilsin ama sadece kendi klasörü ile ilgilensin
+
+nano a.sh
+#!/bin/bash
+echo merhaba $(whoami)
+
+./a.sh      // ile aktif dizinde çalıştırılır,
+
+PATH=$PATH:.       // eski path'e aktif dizini ekle o zaman    a.sh  bu şekilde çalışabilecektir.
+
+lsattr    = flaglar
+sudo chattr +i dosyaadi      // dosya artık silinemez root dahil
+sudo chattr -i dosyaadi      // dosya artık silinebilir
+sudo chattr +a dosyaadi    // ilave yapılmasına izin verilsin ama üst kısımdaki verilere müdahele yapılmasın
+sudo chattr -a dosyaadi    // yetkiyi kaldır
+
+
+cat /etc/passwd      // kullanıcılar
+cat /etc/group         // gruplar
+sudo cat /etc/shadow         // şifreler heaslenmiş bir şekilde
+sudo cat /etc/gshadow    
+sudo !! // sudo olarak en son komutu çalıştırır
+sudo grep ahenk4 /etc/shadow      //  filtreleme
+// şifre sonundaki  :19950:0:999999:7:::      man 5 passwd  //detay   // şifre önünde ! varsa bu kullanıcı kilitlidir sisteme girişi engellenmiştir (root)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ls -a /etc/skel/        // oluşturulan kullanıcının evine otomatik kopyalanacak dosyalar mesajlar buraya atılır   // çok kullanılır
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+sudo useradd user_name
+sudo adduser user_name     // kullanıcı bilgileri ister
+
+sudo grep coro /etc/shadow     //  başta coro içeren kullanıcılar
+sudo usermod -s            // shell değiştir
+sudo usermod -L corona            // kullanıcıyı kilitle
+// veya /etc/shadow dosyaya git bir editorle aç başına ! yaz kilitle veya ! sil aktif yap kullanıcıyı
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+cat /etc/passwd | grep user_adi     // kullanılan terminal kabuk adı
+file -i dosya_adi                                 // dosya türü
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+bin    = binary
+sbin   = sistem binary root izni ister
+etc    /// uygulamalar
