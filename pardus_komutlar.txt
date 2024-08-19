@@ -229,6 +229,9 @@ sudo !! // sudo olarak en son komutu çalıştırır
 sudo grep ahenk4 /etc/shadow      //  filtreleme
 // şifre sonundaki  :19950:0:999999:7:::      man 5 passwd  //detay   // şifre önünde ! varsa bu kullanıcı kilitlidir sisteme girişi engellenmiştir (root)
 
+
+which bash           // dosya yolunu veriri
+which python3
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ls -a /etc/skel/        // oluşturulan kullanıcının evine otomatik kopyalanacak dosyalar mesajlar buraya atılır   // çok kullanılır
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
