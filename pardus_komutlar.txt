@@ -49,10 +49,11 @@ ls ~/TEST/ist/m*
 sudo ls ~deneme         //
 
 
-clear
+clear  == ctrl+l
 pwd                      // aktif dizin
 exit                       // root'tan çık  // 2. defa terminali kapat
 history                 // geçmiş komut listesi
+history -c  // tüm geçmiş komutları siler
 !sıra_numarası   // belirtilen sıradaki (!33) komutu çalıştırır
 !-sayi                   // sondan (sayi). komutu çalıştır
 !-1        = !!          // son komut
