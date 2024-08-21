@@ -163,11 +163,32 @@ cat sayi | paste -s -d+ | bc                // sayi dosyasindaki sayıları past
 man ls                
 
 
-free                      // disk boyutları byte olarak verir
-free -h                 // disk boyutları byte'ları dönüştürür
+free                      // bellerk boyutları byte olarak verir
+free -h                 // bellek boyutları byte'ları dönüştürür
 free > bellek_listesi
 
 df -h                // disk free
+ls // tab tab ls ile başlayan tüm kodalr           veya   ch tab tab aynı şekilde
+lsblk   // disk bilgileri
+lsusb
+lspci           // network kartları
+lscpu             // işlemci bilgileri
+lsusb -v     // ayrıntılı
+lscpu > cpu_bilgileri             // cpu bilgilerini bir dosyaya yazdır
+lshw    // tüm donanım ile ilgili bilgiler     /// ama bende lshw yok   // hwinfo da yok
+
+ls /proc/            // yukaraki bir sürü kodun içeren dosya, programlar kodlar, değişkenleri, parametleri....
+cat /proc/meminfo          // bellek bilgisi       
+cat /proc/cpuinfo          // cpu bilgisi   
+cat /proc/uptime                     // pc ne zamn açılmış    
+uptime                     // pc ne zamn açılmış   
+uptime -p                     // pc ne zamn açılmış   
+uptime -s                     // since    
+
+date            //
+who             //online userlar
+users         / aktik kulanıcılar
+lsof             //  açık uygulamalar listesi
 
 du       /// komutun yazıldığı dizindeki dizinlerin kapasitelerini gösteririr
 du dizin       /// komutun yazıldığı dizindeki dizinlerin kapasitelerini gösteririr
@@ -312,6 +333,7 @@ startx         // x i başlat
 xin            // mousei klavye inputları ayarla
 xmessage slm        // 
 
+free   // bellek bilgileri
 df -T      // disk alanları
 df -Th
 df -Thi     /// i = index
@@ -332,6 +354,9 @@ sftp> lls         // locali listele
 sftp> put dosya      // localden al uzağa kopyala dosya
 sftp> get dosya      // uzaktan locale kopyala dosya
 exit     // ile sftp'den çıkış
+
+wall mesaj_içeriği                // bir sunucudan yapılan bu broadcast mesaj sunucudaki tüm kullanıcılara gider
+/// write ile bir kullanıcıdan bir kullanıcı arasında yapılan mesajlaşma
 
 head dosya  // dosyanın ilk 10 satırını okur
 head -n 15 dosya    // dosyanın ilk 15 satırını okur
@@ -357,4 +382,51 @@ crontab -e    == nano /etc/crontab
 
 * * * * * user date >> /home/user/Masaüstü/saat.txt
 * * * * * /home/user/Masaüstü/saat.sh
+
+
+//// kurulum için Synaptic Paket Yöneticisi
+cat /etc/apt/sources.list                /// depo adres listesi
+apt            // apt komutları listesi
+sudo apt install app
+sudo apt list              // yüklü uygulamaları listele
+sudo apt show app              // yüklü uygulamaları listele
+sudo apt update
+sudo apt upgrade
+sudo apt remove app   // kaldır
+sudo apt purge app   // nesi var nesi yok hepsini kaldır
+sudo apt install -f      // yüklenme esnasında internetten kaynaklı kesinti olursa düzeltilmesi için
+sudo apt install --fix-broken      // yüklenme esnasında internetten kaynaklı kesinti olursa düzeltilmesi için
+sudo apt-cache search pinta          // cashede arama yapma
+sudo apt install ./anydesk_5.5.5-1_amd64.deb            // locale indirilen dosyanın yüklenmesi      // depodan değil
+sudo apt --only-upgrade appname     // sadece bir appi yükseltme
+sudo dpkg -i anydesk_5.5.5-1_amd64.deb            // locale indirilen dosyanın yüklenmesi      // depodan değil
+sudo dpkg -r anydesk           // app'i sil
+sudo dpkg -l anydesk            // listele
+sudo dpkg -L anydesk            // listele
+sudo dpkg -s anydesk            // ayrıntı göster
+sudo dpkg -S anydesk            // pinta ile ilgili tüm dosyalar
+sudo dpkg --configure -a     //  bozuk uygulamayı düzeltmek
+
+sudo dpkg-reconfigure locales     //  dil, saat dilimi vb konfigurlar
+
+sudo apt install pinta
+sudo apt install anydesk
+
+sudo apt install htop
+sudo apt install iotop
+sudo apt install powertop
+sudo apt install iftop
+sudo apt install htop iotop powertop iftop     // bir çok uygulama aynı satırda insatall edilebilir
+
+sudo tasksel            // web server, print server SSH server, laptop    // GUI  ile paket kurulabilir
+sudo aptitude            //   // GUI  ile paket kurulabilir
+sudo aptitude install tree
+
+
+//////////// process
+top                  // çalışan uygulamarı           k bass kill için index yaz 
+htop            // daha renkli
+ps        // çalışan procesler     // kabuk içinde
+ps aux   // tüm orcıessler
+ps aux | grep ahenk4              // bir kullanıcının  yaptığı processler
 
