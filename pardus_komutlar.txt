@@ -95,7 +95,7 @@ rm dosya_adi             // dosya siler
 rm dosya1 dosya2.txt  // her iki dosyayı da siler
 rm dosya\ dosya.txt  // dosya dosya.txt adındaki dosyayı siler
 
-rmdir boş_klasör
+rmdir boşklasor               //boş_klasör siler
 rm -r dosya    veya rm -r dolu_klasör
 
 mv dosya1 dosya2    // dosya1'i keser dosya2'e yapıştırır = dosya isim değişikliği gibi de yapar
@@ -299,6 +299,15 @@ egrep       // regex lerle çalışma
 startx         // x i başlat
 xin            // mousei klavye inputları ayarla
 xmessage slm        // 
+
+df -T      // disk alanları
+df -Th
+df -Thi     /// i = index
+
+// locate ile dosya/dizin indexini bulamıyorsa sudo updatedb ile güncellenme isteyebilir.
+locate dosya_adı        // dosya arama (path)
+/// dosya veya klasör rm ile silinirse bile dizinden silinmez    
+// bir dosya/klasör silindikten sonra sudo locatedb ile güncellenirse indexten de silinir
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 cat /etc/passwd | grep user_adi     // kullanılan terminal kabuk adı
