@@ -6,6 +6,7 @@ ahenk4@pardus4:~$        //  ~$ = normal kullanıcı demek
 bash                // bash şeridine geçer  ahenk4@pardus4:~$      ---- kullanıcıadı@hostname
 whoami          // ahenk4
 hostname      // pardus4
+who              /// sistemdeki tüm kullanıcılar 
 
 Birkaç karakter yazıp tab tuşuna (bir kere) basılırsa (tek alternatif varsa) otomatik tamamlama yapar
 tab tuşuna iki defa basılırsa yazılan karakterler ile başlayan dosya/dizinleri (birden fazla alternatif varsa) listeler
@@ -309,6 +310,18 @@ locate dosya_adı        // dosya arama (path)
 /// dosya veya klasör rm ile silinirse bile dizinden silinmez    
 // bir dosya/klasör silindikten sonra sudo locatedb ile güncellenirse indexten de silinir
 
+ssh -p 22 username@IP = ssh -p 22 name@IP          default (22)
+scp dosya username@IP:~        // username isimli kullanıcının evine kopyala
+
+sftp username@IP       // çok dosya gönderiminde kullanılır
+sftp> pwd              // uzak sunucuda nerdeyim
+sftp> lpwd             // sftp ile uzak bir yere bağlı iken  localde bir şey yapılcaksa başına l konulur          
+sftp> ls           // uzak listele
+sftp> lls         // locali listele
+sftp> put dosya      // localden al uzağa kopyala dosya
+sftp> get dosya      // uzaktan locale kopyala dosya
+exit     // ile sftp'den çıkış
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 cat /etc/passwd | grep user_adi     // kullanılan terminal kabuk adı
 file -i dosya_adi                                 // dosya türü
@@ -319,5 +332,5 @@ bin    = binary
 sbin   = sistem binary root izni ister
 etc    /// uygulamalar
 
-
+sudo adduser testuser
 
