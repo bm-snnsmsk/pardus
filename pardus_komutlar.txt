@@ -106,6 +106,7 @@ mv *.txt ist               // tüm .txt dosyaları kes ist klasörüne yapışt�
 mv ?a* ist                 // 2. harfi a olan tüm dosyaları/klasörleri kes ist klasörüne yapıştır
 mv ????? ist             // tüm beş harfli dosyaları/klasörleri kes ist klasörüne yapıştır
 mv ankara/[0-9]*.txt ist    // rakamla başlayan txt dosyaları kes ist klaörüne yapıştır
+mv dosya dosya.ext          // uzantıyı değiştirme
 [a-zA-Z]*          // harfle başlayan 
 [^a-zA-Z]*        // harfle başlamayan 
 [09]*                  // ilk harfi 0 veya 9 olan 
@@ -126,6 +127,8 @@ ls > liste_dosyasi 2> hatadosyasi          // dizinleri belirtilen dosyaya atar 
 ls > liste_dosyasi 2>> hatadosyasi       // dizinleri belirtilen dosyaya atar hata varsa da hata dosyasına ekler
 
 cat dosyaadi                       // dosyayı okur
+cat > yeni.txt         // imleç yanar bilgileri yaz kaydetmek için     ctrl+d   yaz
+cat >> yeni.txt         // mevcut dosyaya ekleme yapar imleç yanar bilgileri yaz kaydetmek için     ctrl+d   yaz
 cat dosya1 dosya2             // dosya2 son satırdan dosya1'e ekler ama kaydetmez
 cat dosya1 dosya2   > birleştirilmişdosya          // dosya2'i son satırdan dosya1'e ekler ve birleştirilmişdosya'ya kaydeder
 touch abc.pdf
@@ -165,6 +168,11 @@ free -h                 // disk boyutları byte'ları dönüştürür
 free > bellek_listesi
 
 df -h                // disk free
+
+du       /// komutun yazıldığı dizindeki dizinlerin kapasitelerini gösteririr
+du dizin       /// komutun yazıldığı dizindeki dizinlerin kapasitelerini gösteririr
+du -h dizin   /// komutun yazıldığı dizindeki dizinlerin kapasitelerini gösteririr (MB, GB...)  
+du -ch dizin    /// toplam buyutu da ekler
 
 man 1 passwd = man passwd     // kullanıcı şifre değiştirme
 man 5 passwd                 // dosya biçimi yardımı
@@ -290,8 +298,10 @@ sudo chown root. dosya_name           // user ve group root olsun
 
 
 
-grep isim                 // içinde isim geçeleri getir
-grep -i isim           // içinde isim geçeleri getir   ama büyük küçük harf ayrımını yoksay
+grep isim  dosya               // içinde isim geçeleri getir
+grep -n isim dosya                 // içinde name göre ara isim geçeleri getir
+grep -n isim dosya                  // içinde name göre ara isim geçeleri getir
+grep -i isim dosya           // içinde isim geçeleri getir   ama büyük küçük harf ayrımını yoksay
 pgrep  // process
 ngrep     //network
 zgrep      // gz
@@ -323,6 +333,12 @@ sftp> put dosya      // localden al uzağa kopyala dosya
 sftp> get dosya      // uzaktan locale kopyala dosya
 exit     // ile sftp'den çıkış
 
+head dosya  // dosyanın ilk 10 satırını okur
+head -n 15 dosya    // dosyanın ilk 15 satırını okur
+
+tail dosya     // dosyanın son 10 satırını okur
+tail -n 15 dosya     // dosyanın son 15 satırını okur
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 cat /etc/passwd | grep user_adi     // kullanılan terminal kabuk adı
 file -i dosya_adi                                 // dosya türü
@@ -334,4 +350,11 @@ sbin   = sistem binary root izni ister
 etc    /// uygulamalar
 
 sudo adduser testuser
+
+
+----------------------- CRONTAB ----------------------------------------------------
+crontab -e    == nano /etc/crontab
+
+* * * * * user date >> /home/user/Masaüstü/saat.txt
+* * * * * /home/user/Masaüstü/saat.sh
 
