@@ -430,3 +430,8 @@ ps        // çalışan procesler     // kabuk içinde
 ps aux   // tüm orcıessler
 ps aux | grep ahenk4              // bir kullanıcının  yaptığı processler
 
+ip -4 r
+sudo nano /etc/network/interfaces
+sudo apt full-upgrade -yq
+sudo apt autoremove
+su - apt-mirror -c apt-mirror
