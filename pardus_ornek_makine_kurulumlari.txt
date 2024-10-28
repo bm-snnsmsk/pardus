@@ -1,0 +1,52 @@
+***Bu kodlar bu şekilde hatasız çalıştı****
+###############################
+sanal makine adı : pardusserver
+machine name : pardusserver
+domain name : server
+full name : sinan simsek
+username : sinan
+password : 1234
+ip : 172.20.10.3
+subnetmask : 255.255.255.240
+
+###############################
+
+sanal makine adı : lider ahenk
+machine name : parduslider
+full name : lider pardus                girişte bilgisayar adı 
+username : lider                            lider@parduslider:~/Masaüstü
+password : 1234
+ip : 172.20.10.5
+
+LDAP Base DN    		         : baran.local
+Sistem Admin Parolası	         : 12345
+Lider Arayüz Kullanıcı Adı 	         : lider_console
+Lider Arayüz Kullanıcı Parolası         : 1234
+Lider Arayüz Kullanıcı Mail Adresi   : eemsinan.73@gmail.com
+###############################
+
+sanal makine adı : ahenkbir
+machine name : birahenk
+full name : ahenk bir
+username : ahenkbir
+password : 1234
+
+###############################
+
+sudo nano /etc/network/interfaces
+
+iface eth0 inet static
+address 172.20.10.3
+netmask 255.255.255.240
+gateway 172.20.10.1
+dns-nameservers 8.8.8.8 8.8.4.4
+
+sudo systemctl restart networking.service
+
+###############################
+
+
+
+
+
+

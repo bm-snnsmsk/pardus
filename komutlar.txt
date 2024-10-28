@@ -25,6 +25,7 @@ ip a
 sudo ifconfig
 
 /// misafir eklentisi
+// misafir eklentisini indir
 sudo apt-get install gcc make perl linux-headers-amd64  // eklenti dizininde 
 sudo sh VBoxLinuxAdditions.run   // eklenti içerisi dizininde
 /// işlem tamamlandıktan sonra ""Birimi Ayır"" diyerek disk silinebilir
