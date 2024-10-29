@@ -1,0 +1,5 @@
+sudo systemctl status firewalld
+sudo systemctl stop firewalld           ## geçerli oturum için kapalı olur
+sudo systemctl disable firewalld       ## tamamen kapanır
+
+firewall-cmd --state

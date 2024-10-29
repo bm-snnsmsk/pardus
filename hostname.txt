@@ -1,0 +1,5 @@
+sudo su pico /etc/hostname/
+hostname yeni_kullanici_adi
+pico /etc/hosts/
+
+// pc'yi kapat

@@ -11,6 +11,17 @@ subnetmask : 255.255.255.240
 
 ###############################
 
+sanal makine adı : samba
+machine name : sambaserver
+domain name :sambasrv
+full name : samba server
+username :samba
+password : 1234
+ip : 172.20.10.7
+subnetmask : 255.255.255.240
+
+###############################
+
 sanal makine adı : lider ahenk
 machine name : parduslider
 full name : lider pardus                girişte bilgisayar adı 
@@ -32,21 +43,6 @@ username : ahenkbir
 password : 1234
 
 ###############################
-
-sudo nano /etc/network/interfaces
-
-iface eth0 inet static
-address 172.20.10.3
-netmask 255.255.255.240
-gateway 172.20.10.1
-dns-nameservers 8.8.8.8 8.8.4.4
-
-sudo systemctl restart networking.service
-
-###############################
-
-
-
 
 
 

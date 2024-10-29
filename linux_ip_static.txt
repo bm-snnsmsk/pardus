@@ -1,0 +1,15 @@
+cd /etc/sysconfig/network-scripts/
+sudo nano ifcfg-enp0s3
+*************************
+...
+BOOTPROTO = static
+IPADDR = 172.20.10.3
+NETMASK = 255.255.255.240
+GATEWAY = 172.20.10.1
+DNS1 = 172.20.10.1
+DNS2 = 8.8.8.8
+...  CTRL + O - enter - CTRL + X
+*************************
+sudo systemctl restart network.service
+
+

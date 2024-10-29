@@ -1,0 +1,23 @@
+sudo apt-get update
+
+mkdir ~/paylasim
+sudo chmod 777 ~/paylasim
+sudo apt-get install samba*
+sudo nano /etc/samba/smb.conf
+**************
+[paylasim]
+comment = paylasim dizini
+path = /home/kullanici_adiniz/paylasim
+browseable = yes
+guest ok = yes
+read only = no
+public = yes
+writable = yes
+*************************
+CTRL+O   ENTER   CTRL+X
+
+sudo /etc/init.d/smbd restart
+
+
+##karşı taraftan paylaşımlı klsöre ulaşmak
+thunar smb://172.20.10.3              ##samba sunucu adresi

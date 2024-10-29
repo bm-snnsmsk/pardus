@@ -1,0 +1,47 @@
+sudo yum -y install samba-client samba-common samba
+sudo systemctl restart smb.service
+sudo systemctl restart nmb.service
+
+sudo nano /etc/samba/smb.conf
+
+******
+[global]
+ 	workgroup = WORKGROUP
+	server string = Samba Server %v
+	netbios name = SMBSRV1
+	map to guest = bad user
+	dns proxy = no
+	security = user
+	...
+...
+[paylasim]
+	path = /paylasim
+	browsable = yes
+	writable = yes
+	guest ok = yes
+	read only = no
+	force user = root
+
+[sifrelipaylasim]
+	path = /sifrelipaylasim
+	browsable = yes
+	writable = yes
+	guest ok = no
+	read only = no
+	valid user = baran
+
+[grouppaylasim]
+	path = /grouppaylasim
+	browsable = yes
+	writable = yes
+	guest ok = no
+	read only = no
+	valid user = @yonetici
+****
+sudo systemctl restart smb.service
+sudo systemctl restart nmb.service
+
+sudo smbpasswd -a baran
+sudo /etc/init.d/smbd restart
+
+

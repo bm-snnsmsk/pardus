@@ -1,0 +1,11 @@
+sudo apt full-upgrade -yq
+sudo apt autoremove
+/bin/bash  /var/spool/apt-mirror/var/clean.sh
+sudo echo "* 4 * * * root /usr/bin/apt-mirror > /var/spool/apt-mirror/var/cron.log" > /etc/cron.d/apt-mirror && sudo systemctl restart cron.service
+ln -s /var/spool/apt-mirror/mirror/depo.pardus.org.tr/pardus /var/www/html/pardus
+ln -s /var/spool/apt-mirror/mirror/depo.pardus.org.tr/guvenlik /var/www/html/guvenlik
+ln -s /var/spool/apt-mirror/mirror/repo.liderahenk.org/liderahenk /var/www/html/liderahenk
+/etc/init.d/apache2 restart
+
+nano /var/spool/apt-mirror/var/cron.log
+su - apt-mirror -c apt-mirror
