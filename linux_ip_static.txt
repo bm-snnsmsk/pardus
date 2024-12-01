@@ -12,4 +12,14 @@ DNS2 = 8.8.8.8
 *************************
 sudo systemctl restart network.service
 
+--------------------------------------------------------
+2. yol
+sudo nano/etc/network/interfaces
+
+allow-hotplug enp0s3
+iface enp0s3 inet static
+address 172.20.10.3
+netmask 255.255.255.240
+gateway 172.20.10.1
+dns-nameserver 8.8.8.8
 

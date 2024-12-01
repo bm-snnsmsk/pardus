@@ -57,6 +57,7 @@ history -c  // tüm geçmiş komutları siler
 !sıra_numarası   // belirtilen sıradaki (!33) komutu çalıştırır
 !-sayi                   // sondan (sayi). komutu çalıştır
 !-1        = !!          // son komut
+sudo !!                // sudo son komut
 ctrl+R                  // listeden komut arama
 history | grep apt   // apt olan komutları göster
 
