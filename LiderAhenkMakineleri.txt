@@ -1,0 +1,56 @@
+sanal_makine_adı  : pardusserver
+makine adı              : pardusserver
+username               : sinan
+şifre                         : 1234
+ip                             : 172.20.10.3
+
+------------------------------------------------
+sanal_makine_adı  : ahenkbir
+makine adı              : birahenk
+username                : ahenkbir
+şifre                          : 1234
+ip                              : 172.20.10.6
+
+------------------------------------------------
+sanal_makine_adı  : ahenkiki
+makine adı              : snnahenkiki
+username                : ahenk2
+şifre                          : 123456
+ip                              : 172.20.10.4
+
+------------------------------------------------
+sanal_makine_adı  : ahenk3
+makine adı              : muhasebe
+username                : bilgiislem
+şifre                          : 1234
+
+username                : hbys
+şifre                          : Password1234
+ip                              : 172.20.10.5
+
+------------------------------------------------
+
+sanal_makine_adı  : ahenk4
+makine adı              : evrakkayit
+username                : bilgiislem
+şifre                          : 1234
+
+username                : mardinism
+şifre                          : Password1234
+ip                              : 172.20.10.8
+
+------------------------------------------------
+
+sanal_makine_adı  : ahenk5
+makine adı              : satinalma
+username                : bilgiislem
+şifre                          : 1234
+
+username                : mardinism
+şifre                          : Password1234
+ip                              : 172.20.10.8
+
+------------------------------------------------
+
+brn
+0ytn6580
