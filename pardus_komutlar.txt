@@ -3,6 +3,11 @@ ahenk4@pardus4:~$        //  ~$ = normal kullanıcı demek
 #                                          // yönetici kullanıcı
 
 
+cp --help
+man cp
+
+
+
 bash                // bash şeridine geçer  ahenk4@pardus4:~$      ---- kullanıcıadı@hostname
 whoami          // ahenk4
 hostname      // pardus4
@@ -75,11 +80,16 @@ cd /            // köke git                 //   /$
 
 tree                         // ağaç yapısı ile gösterim
 tree ../..                  // iki üst dizinden ağaç yapısına bak
+
+
+####################### klasör oluşturma
 mkdir klasör_adi
 mkdir klasör adi              // hem klasör hem de adi adında iki klasör oluşturur
 mkdir "klasör adi"   = mkdir klasör\ adi   
 mkdir mevcut_klasör_adi/iç_klasör_adi
 
+
+#################### dosya oluşturma
 touch dosya_adi    == touch dosya_adi.txt
 touch dosya\ dosya_adi.txt     // dosya dosya_adi.txt  
 touch mevcut_klasör_adi/dosya_adi
@@ -87,13 +97,25 @@ touch .dosya_adi                         // gizli dosya oluşturur
 touch {a..z}.txt
 touch {1..10}.txt
 
+
+############ kopyalama
 cp dosya_adi path
 cp 123 ../../ato/lo/  =  cp 123 ../../ato/lo      // 123 isimli dosyayı 2 üst dizin altındaki ato altındaki lo dizinine kopyala
 ./../ato/lo/                                        =  göreceli path
 /home/ahenk4/Masaüstü/  =  ~/Masaüstü/         = mutlak path
 cp ~/TEST/maas ~/TEST/ist     // herhangi bir kullanıcının evindeki TEST klasöründeki maas isimli dosyayı al gene aynı path'teki ist klasörüne kopyala
-         
 
+cp --help
+man cp
+cp -R kopyalanacak_klasor path  = cp -r kopyalanacak_klasor path            ## içiçe klasör dosyaları kopyalama
+cp -R -v kopyalanacak_klasor path          ## -v = uç birimde işlem ile ilgili açıklamalar verir
+cp -Rv kopyalanacak_klasor path          ## -v = uç birimde işlem ile ilgili açıklamalar verir
+cp -Rv -i kopyalanacak_klasor path   ## -i = uç birimde işlem ile ilgili izin ister  cevap : yes, y, e, evet, h, no
+cp -f test.txt path                  ## force soru sormadan kopyala üzerine yazdır
+cp -l test.txt path                  ## link/bağlantı oluşturma kopya veya orginal hangisinde değişikler oluşrsa otomatik diğerine de yansır
+
+         
+############ silme
 rm dosya_adi             // dosya siler
 rm dosya1 dosya2.txt  // her iki dosyayı da siler
 rm dosya\ dosya.txt  // dosya dosya.txt adındaki dosyayı siler
@@ -101,7 +123,9 @@ rm dosya\ dosya.txt  // dosya dosya.txt adındaki dosyayı siler
 rmdir boşklasor               //boş_klasör siler
 rm -r dosya    veya rm -r dolu_klasör
 
+########## taşıma
 mv dosya1 dosya2    // dosya1'i keser dosya2'e yapıştırır = dosya isim değişikliği gibi de yapar
+mv klsor klasor2    // klasör taşıma
 mv dosya .dosya      // dosyası gizli yapar
 mv *.txt ist               // tüm .txt dosyaları kes ist klasörüne yapıştır 
 mv ?a* ist                 // 2. harfi a olan tüm dosyaları/klasörleri kes ist klasörüne yapıştır
@@ -127,6 +151,7 @@ echo "deneme yazı" >> dosya.txt        // dosyaya ekleme yapar
 ls > liste_dosyasi 2> hatadosyasi          // dizinleri belirtilen dosyaya atar hata varsa da hata dosyasına atar
 ls > liste_dosyasi 2>> hatadosyasi       // dizinleri belirtilen dosyaya atar hata varsa da hata dosyasına ekler
 
+############### dosya okuma
 cat dosyaadi                       // dosyayı okur
 cat > yeni.txt         // imleç yanar bilgileri yaz kaydetmek için     ctrl+d   yaz
 cat >> yeni.txt         // mevcut dosyaya ekleme yapar imleç yanar bilgileri yaz kaydetmek için     ctrl+d   yaz
