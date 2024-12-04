@@ -1,0 +1,3 @@
+sudo chown -R username /klasor_path
+
+sudo chmod -R a+rX /klasor_path

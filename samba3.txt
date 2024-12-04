@@ -1,0 +1,12 @@
+sudo apt-get install samba
+sudo nano /etc/samba/smb.conf
+
+
+path = ~/Masaüstü/paylasim
+browseable = yes
+readonly = no
+guest ok = yes
+guest only = no
+public=yes
+
+sudo chmod 776 paylasim_klasoru_dizini

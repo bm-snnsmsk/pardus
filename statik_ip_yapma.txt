@@ -4,11 +4,11 @@ sudo nano /etc/network/interfaces
 ###############################
 source /etc/network/interfaces.d/*
 
-allow-hotplug eth0 
-iface eth0 inet static
-address 172.20.10.3
-netmask 255.255.255.240
-gateway 172.20.10.1
+allow-hotplug enp0s3
+iface enp0s3 inet static
+address 192.168.1.150
+netmask 255.255.255.0
+gateway 192.168.1.1
 dns-nameservers 8.8.8.8 8.8.4.4
 
 ###############################

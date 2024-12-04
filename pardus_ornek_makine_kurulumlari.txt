@@ -1,13 +1,24 @@
 ***Bu kodlar bu şekilde hatasız çalıştı****
 ###############################
 sanal makine adı : pardusserver
-machine name : pardusserver
+hostname : pardusserversinan
 domain name : server
 full name : sinan simsek
 username : sinan
 password : 1234
-ip : 172.20.10.3
-subnetmask : 255.255.255.240
+ip : 192.168.1.150
+subnetmask : 255.255.255.0
+
+###############################
+Veritabanı                                   : 192.168.1.150
+Kullanıcı Adı                               : sinan
+Şifre                                             : 1234
+      --------------------------------------------------------------
+LDAP Base DN                                  : baran.org
+Sistem Admin Parolası                    : 123456
+Lider Arayüz Kullanıcı Adı               : snnsmsk
+Lider Arayüz Kullanıcı Parolası       : Best.221727
+Lider Arayüz Kullanıcı Mail Adresi : eemsinan.73@gmail.com
 
 ###############################
 
@@ -22,18 +33,13 @@ subnetmask : 255.255.255.240
 
 ###############################
 
-sanal makine adı : lider ahenk
-machine name : parduslider
-full name : lider pardus                girişte bilgisayar adı 
-username : lider                            lider@parduslider:~/Masaüstü
+sanal makine adı : liderahenk
+machine name : lider
+full name : lider ahenk                girişte bilgisayar adı 
+username : lidersnn                           lider@parduslider:~/Masaüstü
 password : 1234
-ip : 172.20.10.5
+ip : 192.198.1.106
 
-LDAP Base DN    		         : baran.local
-Sistem Admin Parolası	         : 12345
-Lider Arayüz Kullanıcı Adı 	         : lider_console
-Lider Arayüz Kullanıcı Parolası         : 1234
-Lider Arayüz Kullanıcı Mail Adresi   : eemsinan.73@gmail.com
 ###############################
 
 sanal makine adı : ahenkbir
