@@ -114,7 +114,7 @@ mv dosya dosya.ext          // uzantıyı değiştirme
 [lt!]*                  // ilk harfi l, t veya ! olan 
 
 echo "deneme yazı" > dosya.txt  = echo "deneme yazı" 1> dosya.txt     // dosya mevcut ise içeriği ekler, mevcut değilse belirtilen içerikli bir dosya oluşturur
-echo "içerik" 2> dosya_adi                // varsa hata hata dosyasına gönderri
+echo "içerik" 2 > dosya_adi                // varsa hata hata dosyasına gönderri
 
 echo $?                                                 // son komutun sonucu
 0       // komut çalıştı
@@ -371,9 +371,10 @@ file -i dosya_adi                                 // dosya türü
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-bin    = binary
-sbin   = sistem binary root izni ister
-etc    /// uygulamalar
+/bin    = binary
+/sbin   = sistem binary root izni ister
+/etc    /// uygulamalar
+/usr/share/applications     : uygulamalar
 
 sudo adduser testuser
 
