@@ -1,0 +1,6 @@
+Terminale yazılacak
+>> sudo apt-get update
+>> sudo apt-get install guvcview
+
+Çalışmtırmak için
+>> guvcview

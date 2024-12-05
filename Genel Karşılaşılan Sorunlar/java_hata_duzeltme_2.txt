@@ -1,0 +1,8 @@
+sudo su
+apt install openjdk-8-jre icedtea-netx -y
+apt install libgconf-2-4 -y
+update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+sed -i "s|JRE=|#JRE=|" /usr/share/icedtea-web/bin/javaws.sh
+echo 'JRE=/usr/lib/jvm/java-8-openjdk-amd64' >> /usr/share/icedtea-web/bin/javaws.sh
+apt --fix-broken install -y
+

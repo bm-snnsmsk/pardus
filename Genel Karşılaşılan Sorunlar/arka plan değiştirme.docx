@@ -1,0 +1,5 @@
+﻿xfconf-query -c xfce4-desktop -m   (çalıştırarak Arka planı manuel değiştiriyoruz yolu öğreniyoruz)
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "/usr/share/backgrounds/resim/bayrak.jpg"
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitornxoutput0/workspace0/last-image -s "/usr/share/backgrounds/resim/bayrak.jpg"

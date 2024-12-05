@@ -1,3 +1,22 @@
+### DNS
 sudo nano /etc/resolv.conf
+--------------------------------
+nameserver 10.47.48.4
+nameserver 10.47.240.5
+nameserver 10.47.48.9
+--------------------------------
 
-nameserver 192.168.1.1
+### ip 
+ip -4 r                     // ile network ayrıca arayüz adı
+sudo nano /etc/network/interfaces
+--------------------------------
+# auto lo
+# iface lo inet loopback
+
+allow-hotplug enp0s3
+iface enp0s3 inet static
+address 10.47.241.251
+netmask 255.255.248.0
+gateway 10.47.240.1
+dns-nameserver 10.47.240.4
+--------------------------------

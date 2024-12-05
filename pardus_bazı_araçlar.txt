@@ -1,0 +1,12 @@
+sudo apt install ssh -y
+ssh username@IPAddr
+
+sudo apt update
+sudo apt full-upgrade -yq
+sudo apt full-upgrade -y
+sudo apt autoremove
+
+iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
+iptables -A INPUT -p udp --dport 123 -j ACCEPT
+
+

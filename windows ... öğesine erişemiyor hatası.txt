@@ -1,0 +1,4 @@
+1 - windows özelliklerinden smb ayarlarını aktif et
+2 - ağ klasörü adres çubuğundan \\makine_adı
+3 - şifre gir
+4 - bilgisayarı yeniden başlat

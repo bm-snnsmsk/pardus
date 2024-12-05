@@ -1,0 +1,11 @@
+http://localhost:631
+    1. “Administration” bölümüne gidin.
+    2. “Add Printer” seçeneğine tıklayın.
+    3. Sistem bağlı olan yazıcıları otomatik olarak bulmalıdır. BY425X yazıcısını seçin ve “Devam” deyin.
+    4. Yazıcı adı, açıklama ve konum bilgilerini doldurun.
+    5. "Model" kısmında yazıcınızın sürücüsünü veya benzer bir barkod yazıcı modelini seçin.
+Eğer yazıcınız listede yoksa, POSSIFY üretici sayfasından sürücüleri indirip kurmanız gerekebilir.
+
+Gerekli Sürücüleri Kurma
+POSSIFY’ın Linux için sunduğu bir sürücü yoksa, benzer bir barkod yazıcı sürücüsü (örneğin Zebra ZPL sürücüsü) kullanmayı deneyebilirsiniz. Alternatif olarak, Generic Text Only Printer sürücüsü ile yazıcınızı çalıştırabilirsiniz.
+Web arayüzünden sürücü seçimi sırasında Generic > Raw Queue seçeneği işlevsel olabilir.

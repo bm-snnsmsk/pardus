@@ -1,0 +1,29 @@
+sudo nano /etc/adjtime             
+kodu terminalde çalıştırınca UTC yazan yeri LOCAL yapıyoruz. 
+Manuel saat düzeltip ve BİOS saatini düzeltiyoruz.
+Yeniden Başlatıyoruz.
+---------------------------------------------------------------------------------
+
+ntpq -p
+timedatectl status
+sudo ntpd
+sudo apt install ntpdate -y
+sudo su
+ntpdate 10.47.49.150
+sudo nano /etc/adjtime     => LOCAL -> UTC
+---------------------------------------------------------------------------------
+
+Ayrupa -> Istanbul -> Tamam -> Tamam
+sudo dpkg-reconfigure tzdata
+değişiklik yok 2 kere tamam
+---------------------------------------------------------------------------------
+
+nano /etc/ahenkk_update.sh
+---------------------------------------------------------------------------------
+
+hwclock --syslock
+---------------------------------------------------------------------------------
+
+sudo timedatectl set-ntp true
+sudo timedatectl set-time "2024-11-14 15:37:00"
+---------------------------------------------------------------------------------

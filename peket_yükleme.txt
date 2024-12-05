@@ -1,0 +1,1 @@
+sudo dpkg -i  paket_adi.deb

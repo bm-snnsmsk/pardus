@@ -1,0 +1,11 @@
+sudo apt remove --purge ntp -y
+sudo apt autoremove -y
+sudo apt install ntp -y
+sudo sed -i -e 's/pool 0.debian.pool.ntp.org iburst/#pool 0.debian.pool.ntp.org iburst/' /etc/ntp.conf
+sudo sed -i -e 's/pool 1.debian.pool.ntp.org iburst/#pool 1.debian.pool.ntp.org iburst/' /etc/ntp.conf
+sudo sed -i -e 's/pool 2.debian.pool.ntp.org iburst/#pool 2.debian.pool.ntp.org iburst/' /etc/ntp.conf
+sudo sed -i -e 's/pool 3.debian.pool.ntp.org iburst/#pool 3.debian.pool.ntp.org iburst/' /etc/ntp.conf
+sudo sh -c 'echo "server 10.47.241.251 prefer iburst" >> /etc/ntp.conf'
+sudo timedatectl set-timezone Europe/Istanbul
+sudo systemctl restart ntp.service
+systemctl restart ntp

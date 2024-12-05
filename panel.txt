@@ -1,2 +1,0 @@
-sudo rm -rf /home/$USER/.config/xfce4/*
-sudo reboot
