@@ -5,6 +5,6 @@ sudo chmod -R a+rX /klasor_path
 ------------------------------------------
 
 su yetkili_username
-sudu su
+sudo su
 cp -r dosya/klasor kopya_yolu
 sudo chown username dosya/klasor

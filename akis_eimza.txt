@@ -1,0 +1,12 @@
+sudo apt-get update 
+sudo apt install openjdk-11-jre 
+
+java -version
+
+sudo apt-get install libpcsclite-dev
+sudo apt-get install pcscd 
+sudo apt-get install pcsc-tools
+
+sudo apt-get install akis
+
+akia

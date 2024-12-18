@@ -462,3 +462,8 @@ sudo nano /etc/network/interfaces
 sudo apt full-upgrade -yq
 sudo apt autoremove
 su - apt-mirror -c apt-mirror
+
+***********************************************
+enable                ## bazı komutla listelenir
+enable -n cd          ## cd komutu disable olur
+enable cd             ## cd komutu enable

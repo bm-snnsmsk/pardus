@@ -1,0 +1,14 @@
+komut ile
+------------------------------------------------------
+lsb_release -a                : pardus verion bilgisi
+uname -a                      : kernel bilgisi
+------------------------------------------------------
+
+pardus -> (Arama Çubuğunda)Pardus Hakkında         : kernel, version, iç ip, dış ip, işlemci, bellek,  grafik ...
+
+
+*********************************************************
+version yükseltme 
+-----------------------------
+sudo apt update
+sudo apt full-upgrade -yq
