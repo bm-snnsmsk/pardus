@@ -1,0 +1,5 @@
+1 - xfce4-screenshooter > Terminalden Ekran alıntısını açar
+
+2 - PrintScreen > Tüm ekranı alır
+
+3 - CTRL + PrintScreen > Seçili ekranı alır
