@@ -1,0 +1,13 @@
+conky.text = [[
+${voffset 0}
+${font Ubuntu:style=Medium:pixelsize=35}${time %H:%M}${font}
+${voffset 0}
+${font Ubuntu:style=Medium:pixelsize=13}${time %A %d %B %Y}${font}
+${hr}${font Ubuntu:style=Medium:pixelsize=18}
+Bilgisayar Adı: ${nodename}
+
+#IP Adresi: ${addrs enp0s3}
+#MAC Adresi: $color${execi 99999 cat /sys/class/net/enp0s3/address }
+IP Adresi: ${exec hostname -I}
+MAC Adresi: $color${execi 99999 cat /sys/class/net/$(ip add | awk '/state UP/{print $2}' | rev | cut -c 2- | rev)/address }
+]]

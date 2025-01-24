@@ -1,6 +1,6 @@
 komut ile
 ------------------------------------------------------
-lsb_release -a                : pardus verion bilgisi
+lsb_release -a                : pardus version bilgisi
 uname -a                      : kernel bilgisi
 ------------------------------------------------------
 

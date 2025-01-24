@@ -1,1 +1,6 @@
+****** .deb uzantılı *********
 sudo dpkg -i  paket_adi.deb
+
+
+****** .sh uzantılı **********
+sudo sh install.sh

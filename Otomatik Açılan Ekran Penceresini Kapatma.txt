@@ -1,0 +1,13 @@
+// xfce4-display-settings
+********************************************************
+
+rm ~/.config/autostart/xfce4-display-settings.desktop
+
+xfconf-query -c displays -p / -R -r
+
+
+// Bu yeterli
+xfce4-session-logout --logout
+
+
+rm -rf ~/.cache/sessions/*
