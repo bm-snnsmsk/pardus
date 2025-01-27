@@ -41,6 +41,7 @@ ls -lSr          // size göre listele (küçükten büyüğe)
 izinler             user      grup          size      tarih       name
 -rw-r--r--     1 ahenk4 ahenk4       0 ağu 18 22:51 10.txt                 // ahenk4 ahenk4 = sahip group // dosya   (-rw-r--r-- = user-gruop-diğerkullanıcılar)
 drwxr-xr-x- 2 ahenk4 ahenk4 4096 ağu 18 22:32 istanbul             // klasör
+lrwxr-xr-x- 2 ahenk4 ahenk4 4096 ağu 18 22:32 istanbul             // link
 
 ls -a  = ls --all                  // gizli dosyaları(. ile başlayanlar) da listele  
 ls -a -l  = ls -al = ls -la     // hem gizli hem detaylı listele
