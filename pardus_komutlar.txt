@@ -5,6 +5,7 @@ ahenk4@pardus4:~$        //  ~$ = normal kullanıcı demek
 
 cp --help
 man cp
+whatis cp
 
 
 
@@ -37,6 +38,7 @@ ls -R                // içinde dosya/klasör olan dizinlerin içerisini de list
 (-R) = sıralamayı tersine de çevirir alt dizinleri de gösterir
 ls -lS           // size göre listele (büyükten küçüğe)
 ls -lSr          // size göre listele (küçükten büyüğe)
+ls -lt          // tarihe göre listele (küçükten büyüğe)
 
 izinler             user      grup          size      tarih       name
 -rw-r--r--     1 ahenk4 ahenk4       0 ağu 18 22:51 10.txt                 // ahenk4 ahenk4 = sahip group // dosya   (-rw-r--r-- = user-gruop-diğerkullanıcılar)
@@ -88,6 +90,7 @@ mkdir klasör_adi
 mkdir klasör adi              // hem klasör hem de adi adında iki klasör oluşturur
 mkdir "klasör adi"   = mkdir klasör\ adi   
 mkdir mevcut_klasör_adi/iç_klasör_adi
+mkdir
 
 
 #################### dosya oluşturma
@@ -295,6 +298,11 @@ sudo grep ahenk4 /etc/shadow      //  filtreleme
 
 which bash           // dosya yolunu veriri
 which python3
+type bash       // dosya yolu
+type -a bash    // varsa bir den fazla hepsinin yolunu
+type -t ping      // tipini verir file komutu gibi
+file /bin/man     // ne olduğunu gösterir
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ls -a /etc/skel/        // oluşturulan kullanıcının evine otomatik kopyalanacak dosyalar mesajlar buraya atılır   // çok kullanılır
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
