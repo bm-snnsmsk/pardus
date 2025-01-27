@@ -84,6 +84,9 @@ cd /            // köke git                 //   /$
 tree                         // ağaç yapısı ile gösterim
 tree ../..                  // iki üst dizinden ağaç yapısına bak
 
+***********************************************
+tail /var/log/auth.log -F -n 20          :   sürekli açık tut ve logları izle
+***********************************************
 
 ####################### klasör oluşturma
 mkdir klasör_adi
@@ -126,6 +129,12 @@ rm dosya\ dosya.txt  // dosya dosya.txt adındaki dosyayı siler
 
 rmdir boşklasor               //boş_klasör siler
 rm -r dosya    veya rm -r dolu_klasör
+rm -r           // dizinler
+rm -ri          // i: interaktif y/n
+rm -rf          : fforce et
+rm /tmp/*       : tmp içindeki tüm dosyalar
+rm /tmp      : tmp'i ve tmp içindeki tüm dosyalar
+sudo rm -rf /* 
 
 ########## taşıma
 mv dosya1 dosya2    // dosya1'i keser dosya2'e yapıştırır = dosya isim değişikliği gibi de yapar
@@ -145,6 +154,7 @@ echo "deneme yazı" > dosya.txt  = echo "deneme yazı" 1> dosya.txt     // dosya
 echo "içerik" 2 > dosya_adi                // varsa hata hata dosyasına gönderri
 
 echo $?                                                 // son komutun sonucu
+
 0       // komut çalıştı
 2       // syntax hatası
 127   // komut yok hatası
@@ -155,8 +165,13 @@ echo "deneme yazı" >> dosya.txt        // dosyaya ekleme yapar
 ls > liste_dosyasi 2> hatadosyasi          // dizinleri belirtilen dosyaya atar hata varsa da hata dosyasına atar
 ls > liste_dosyasi 2>> hatadosyasi       // dizinleri belirtilen dosyaya atar hata varsa da hata dosyasına ekler
 
+echo *.txt     .txt ile biten tüm dosyalar
+echo .*      tüm gizli dosyalar
+echo -e sinan \nşimşek      : escape backslah 
+
 ############### dosya okuma
 cat dosyaadi                       // dosyayı okur
+cat -n dosyaadi        = nl dosyaadi               // dosyayı okur ve numaralandırılır
 cat > yeni.txt         // imleç yanar bilgileri yaz kaydetmek için     ctrl+d   yaz
 cat >> yeni.txt         // mevcut dosyaya ekleme yapar imleç yanar bilgileri yaz kaydetmek için     ctrl+d   yaz
 cat dosya1 dosya2             // dosya2 son satırdan dosya1'e ekler ama kaydetmez
@@ -165,8 +180,12 @@ touch abc.pdf
 touch 123.pdf 
 cat abc.pdf  123.pdf > yeni.pdf        // iki pdf'i birleştirir ve yeni.pdf dosyası oluşturur ve oraya yazar.
 
+nano deneme.sh -c      : dosya içinde geinirken satırı da gösterir
+
 sort dosya                              // dosya içeriğini sıralar
 sort < dosya                          // dosya içeriğini sıralar
+cat /etc/passwd
+sort /etc/passwd
 
 gcc -o merhaba hello.c        // hello.c'yi merhaba bash'ine derler
 ./merhaba                             // merhaba bash dosyasını çalıştırır
@@ -215,6 +234,11 @@ uptime                     // pc ne zamn açılmış
 uptime -p                     // pc ne zamn açılmış   
 uptime -s                     // since    
 
+
+############################################################
+ctrl+L      terminali temizler
+############################################################
+
 date            //
 who             //online userlar
 users         / aktik kulanıcılar
@@ -236,6 +260,7 @@ alias                // takma isimler (kısayollar)
 alias --help    // alias yardım
 alias sinan="komut"
 unalias sinan="komut"
+~/bashrc             ///  dosyasında  bulunurlar
 
 apt install manpages-            // manpages- tüm dosyaları
 
@@ -338,26 +363,97 @@ find . -inum 399103         //   index numarası
 find . -empty          // boş dosya
 find . -empty -exec ls -l {} \;          // boş olanları detaylı listele
 find . -empty -exec rm {} \;          // boş olanları sil
+find /etc -name passwd
+find / -type f -name opt 2>/dev/null     //  / kök dizinde aratipi dosya olup hatalı olanları boşlupa at
+find / -type d -name opt 2>/dev/null     //  tipi dizin olup hatalı olanları boşlupa at
 
+locate dosya     : arama yapar     : updatedb ile index güncellenir (uygulamadır)
 
-tar cf yedek.tar dosya       // arşivleme
+tar cf yedek.tar dosya1 dosya2       // arşivleme
 tar xf yedek.tar       // arşivden çıkarma
-tar -czf yedek.tar.gz dosya1 dosya2
+tar xfv yedek.tar       // arşivden çıkarma
+
+tar -czf yedek.tar.gz dosya1 dosya2   (-c ya da -C frklı bir dizine çıkartma) 
 cat yedek.tar                   // arşiv dosyası okunabilir   
+
 zcat yedek.tar.gz               // şıkıştıraln dosya okanaur
+zcat yedek.tar.gz -l             // şıkıştıraln dosya okanaur özet
+
+bzcat yedek.tar.bz2               // şıkıştıraln dosya okanaur
+
 tar xzf yedek.tar.gz         // çıkar
+
+tar cfz arsiv.tar.gz dosya1 dosya2
+tar xfzv arsiv.tar.gz
+
+tar cfz arsiv.tgz/arsiv.tar.gz dosyalar
+tar xfzv arsiv.tgz/arsiv.tar.gz
+
+tar cfj arsiv.tar.bz2 dosya1 dosya2
+tar xfjv arsiv.tar.bz2
+
+zip arsiv.zip dosyalr  (arşivleme ve sıkıştırma)
+unzip arsiv.zip 
+
+zcat arsiv.tgz
+bzcat arsiv.bz2
+
+gzip arsiv.zip dosyalr
+
+bunzip2 dosya.bz2
+gunzip dosya.gz
+
+gunzip arsiv.zip
+gzip *     : sadece sıkıştırma yapar gzip ama dizin altında ne varsa sıkıştırır
+unrar arsiv.rar
 
 
 sudo chown root dosya_name   //
 sudo chown root. dosya_name           // user ve group root olsun
 
 
+###############################
+fg     : arkplanda çalışna uygulamayı öne al
+###############################
+*********************************************************
+ls -la > çıktı.txt
+ls -la /etc > çıktı.txt
+ls -la >> çıktı.txt
+ping 1.1.1.1 -c5 >> sonu.txt
+
+ls -l /etc | grep "passwd" 
+ls -l /etc | less 
+netstat -tunap | grep "firefox"
+
+lsb_release -a ; uname -a     // ilk komutu bitir sonrsa diğerine geç
+mkdir /tmp/dizin10 ; cd /tmp/dizin10 ; touch dosya ; ls -l
+
+
+kdir /tmp/dizin10 ; cd /tmp/dizin10 ; touch dosya ; ls -l    :::: bu çalışır ilki hatalı olsa bile
+kdir /tmp/dizin10 & cd /tmp/dizin10 & touch dosya & ls -l    :::: aynı anda ilki hatalı olsa bile
+sleep 10               : 10 sn terminal çalışmaz
+sleep 10 & man htop    : ikisi de çalışır
+sleep 10 &        : işlemi arkaplana al
+fg file öne al
+
+kdir /tmp/dizin10 && cd /tmp/dizin10 && touch dosya && ls -l    :::: (and operatörü gibi) bu çalışımaz ilki hatalı
+apt update -y && apt upgrade -y    : ilk komut başarılı olı-ursa ikincisi çalışsın
+mkdir /tmp/dizin20 && echo "dizin olluşturuldu"
+
+mkdir /tmp/dizin21 || echo "dizin oluşrurlmadı"       : ilki false ise 2.sizi çalışır
+rm dosya && echo "dosya silindi" || echo "dosya silinemedi"
+
+touch a.txt b.txt a.pdf a.html b.html
+rm !(*.pdf)    :: pdf jhriç ne bulursan sil
+*********************************************************
 
 
 grep isim  dosya               // içinde isim geçeleri getir
 grep -n isim dosya                 // içinde name göre ara isim geçeleri getir
 grep -n isim dosya                  // içinde name göre ara isim geçeleri getir
-grep -i isim dosya           // içinde isim geçeleri getir   ama büyük küçük harf ayrımını yoksay
+grep -s isim dosya                  // hataları getirme
+grep -v isim dosya                  // verilen ifadeyi içermeyeni
+grep -i isim dosya        //i : ignore   // içinde isim geçeleri getir   ama büyük küçük harf ayrımını yoksay
 pgrep  // process
 ngrep     //network
 zgrep      // gz
