@@ -4,4 +4,13 @@ rm ~/.config/autostart/xfce4-display-settings.desktop
 
 xfce4-session-logout --logout
 
+ayrıca bak....
+/usr/share/ahenk
+/usr/share/ahenk-register.py
+/etc/init.d
+~/.config/autostart
+
+/etc/ahenk
+
+
 
