@@ -7,12 +7,17 @@ cp --help
 man cp
 whatis cp
 
+clear = ctrl+l      : terminal temizleme
+exit  = ctrl+D      : otrurum sonlandırma
+
 
 
 bash                // bash şeridine geçer  ahenk4@pardus4:~$      ---- kullanıcıadı@hostname
 whoami          // ahenk4
 hostname      // pardus4
 who              /// sistemdeki tüm kullanıcılar 
+who -a   
+who -b
 
 Birkaç karakter yazıp tab tuşuna (bir kere) basılırsa (tek alternatif varsa) otomatik tamamlama yapar
 tab tuşuna iki defa basılırsa yazılan karakterler ile başlayan dosya/dizinleri (birden fazla alternatif varsa) listeler
@@ -55,6 +60,7 @@ ls ~/bilkent                    // evimdeki bilkent klasörünü listele
 ls ~bilkent                     // bilkent kullanıcısının evi
 ls ~/TEST/ist/m*         
 sudo ls ~deneme         //
+ls -la > a.txt          : çıktıyı a dosyasına yazdır
 
 
 clear  == ctrl+l
@@ -80,12 +86,14 @@ cd ~bilkent            // bilkent kullanıcısının evine git
 cd enter       // evine geri dön   // ~$
 cd -             // geri git
 cd /            // köke git                 //   /$
+cd ~            // home'a git                 //   /~
 
 tree                         // ağaç yapısı ile gösterim
 tree ../..                  // iki üst dizinden ağaç yapısına bak
 
 ***********************************************
 tail /var/log/auth.log -F -n 20          :   sürekli açık tut ve logları izle
+tail -f a.txt                            : eş zamanlı dosya izleme
 ***********************************************
 
 ####################### klasör oluşturma
@@ -128,7 +136,7 @@ rm dosya1 dosya2.txt  // her iki dosyayı da siler
 rm dosya\ dosya.txt  // dosya dosya.txt adındaki dosyayı siler
 
 rmdir boşklasor               //boş_klasör siler
-rm -r dosya    veya rm -r dolu_klasör
+rm -r             : dosya    veya rm -r dolu_klasör
 rm -r           // dizinler
 rm -ri          // i: interaktif y/n
 rm -rf          : fforce et
@@ -211,6 +219,13 @@ cat sayi | paste -s -d+ | bc                // sayi dosyasindaki sayıları past
 
 man ls                
 
+###########################################################################
+which ls         : program yolunu gösterir
+###########################################################################
+
+###########################################################################
+locate a.txt          : dosya yolunu gösterir
+###########################################################################
 
 free                      // bellerk boyutları byte olarak verir
 free -h                 // bellek boyutları byte'ları dönüştürür
@@ -239,7 +254,31 @@ uptime -s                     // since
 ctrl+L      terminali temizler
 ############################################################
 
-date            //
+############################################################
+vi EDİTÖRÜ
+
+vi a.txt 
+i         : yazma moduna geç
+:wq       : yaz ve çık
+:q        :çık 
+:q!       : kaydetmeden çık
+:w        :kydet
+x          : imleç altındaki karakteri siler
+X           : imleçten öncesini siler
+d^           : baştan imleçe kadar siler
+d$       : imleçten satır sonuna kadar siler
+dd          : tüm satırı siler
+
+yy     : mevcut satırı kopyalar
+yw     : imleç öncesinden ekleme yapar
+p       : kopyalanmış metni imleçten sonraya kopyalar
+P       : kopyalanmış metni imleçtn öncesine kopyalar
+############################################################
+
+date            //  mevcut tarih-zaman
+time            //  shell-cpu- zaman bilgisini döndürür
+
+
 who             //online userlar
 users         / aktik kulanıcılar
 lsof             //  açık uygulamalar listesi
@@ -310,6 +349,10 @@ sudo chattr +i dosyaadi      // dosya artık silinemez root dahil
 sudo chattr -i dosyaadi      // dosya artık silinebilir
 sudo chattr +a dosyaadi    // ilave yapılmasına izin verilsin ama üst kısımdaki verilere müdahele yapılmasın
 sudo chattr -a dosyaadi    // yetkiyi kaldır
+
+############################################################
+tty                           : cuurent terminali gösterir
+############################################################
 
 
 cat /etc/passwd      // kullanıcılar
