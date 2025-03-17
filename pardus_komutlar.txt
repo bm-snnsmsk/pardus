@@ -2,6 +2,7 @@ ahenk4@pardus4:~$        //  ~$ = normal kullanıcı demek
 ~                                          // /home/ahenk4/     demektir 
 #                                          // yönetici kullanıcı
 
+sudo nano /etc/apt/sources.list        ## pardus depo kaynakları
 
 cp --help
 man cp
