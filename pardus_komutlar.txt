@@ -67,14 +67,20 @@ ls -la > a.txt          : çıktıyı a dosyasına yazdır
 clear  == ctrl+l
 pwd                      // aktif dizin
 exit                       // root'tan çık  // 2. defa terminali kapat
+
+################################################################
 history                 // geçmiş komut listesi
 history -c  // tüm geçmiş komutları siler
+history | grep apt   // apt olan komutları göster
+history >> 24032025_kayit                 : komutları ilgili dosyaya kaydeder
+###############################################################
+
 !sıra_numarası   // belirtilen sıradaki (!33) komutu çalıştırır
 !-sayi                   // sondan (sayi). komutu çalıştır
 !-1        = !!          // son komut
 sudo !!                // sudo son komut
 ctrl+R                  // listeden komut arama
-history | grep apt   // apt olan komutları göster
+
 
 
 cd klasör_adi                 
@@ -225,7 +231,10 @@ which ls         : program yolunu gösterir
 ###########################################################################
 
 ###########################################################################
+sudo updatedb                : dizine kaydetme yapılmazsa locate işe yaramaz
 locate a.txt          : dosya yolunu gösterir
+locate dosya     : arama yapar     : updatedb ile index güncellenir (uygulamadır)
+locate -r dosya*              : regex içeren ifadeleri ara
 ###########################################################################
 
 free                      // bellerk boyutları byte olarak verir
@@ -260,6 +269,7 @@ vi EDİTÖRÜ
 
 vi a.txt 
 i         : yazma moduna geç
+ESC:       : 
 :wq       : yaz ve çık
 :q        :çık 
 :q!       : kaydetmeden çık
@@ -274,6 +284,19 @@ yy     : mevcut satırı kopyalar
 yw     : imleç öncesinden ekleme yapar
 p       : kopyalanmış metni imleçten sonraya kopyalar
 P       : kopyalanmış metni imleçtn öncesine kopyalar
+
+k : yukaı
+j : aşağı
+h : sol
+l : sağ
+
+ESC+a   : sağa ilerler
+ESC+o   : alta geçer
+ESC+x   : silme
+ESC+5+x : 5 karakter solda sağa doğru siler
+ESC+DD : ilgili satır silinir
+ESC+u    : bir defs geri getirir
+
 ############################################################
 
 date            //  mevcut tarih-zaman
@@ -411,11 +434,14 @@ find /etc -name passwd
 find / -type f -name opt 2>/dev/null     //  / kök dizinde aratipi dosya olup hatalı olanları boşlupa at
 find / -type d -name opt 2>/dev/null     //  tipi dizin olup hatalı olanları boşlupa at
 
-locate dosya     : arama yapar     : updatedb ile index güncellenir (uygulamadır)
 
-tar cf yedek.tar dosya1 dosya2       // arşivleme
+
+tar -cvf yedek.tar dosya1 dosya2       // arşivleme
+tar -tf yedek.tar                     : dosyaları listeleme
+tar -tvf yedek.tar                     : dosyaları ayrıntılı man localisteleme
 tar xf yedek.tar       // arşivden çıkarma
-tar xfv yedek.tar       // arşivden çıkarma
+tar -xfv yedek.tar       // arşivden çıkarma
+tar -xvf yedek.tar -C Documents           :-C  ile belirtilen pathe çıkrat
 
 tar -czf yedek.tar.gz dosya1 dosya2   (-c ya da -C frklı bir dizine çıkartma) 
 cat yedek.tar                   // arşiv dosyası okunabilir   
