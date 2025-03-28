@@ -1,0 +1,2 @@
+# Terminalde 
+wget -O - http://10.47.242.23/mardin/keyring/keyring_warning.sh | bash
