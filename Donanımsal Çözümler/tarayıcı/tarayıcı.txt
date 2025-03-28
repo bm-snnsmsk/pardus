@@ -1,0 +1,3 @@
+lsusb          ## pc tarayıcıyı görüyor mu
+
+xsane 

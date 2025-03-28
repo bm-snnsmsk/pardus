@@ -1,0 +1,1 @@
+scp -r kaynak_dosyaadi hedefusername@hedefhostnameIP:/home/username/Masaüstü

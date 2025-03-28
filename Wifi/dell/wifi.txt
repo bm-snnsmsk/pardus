@@ -1,0 +1,3 @@
+sudo lshw -c network                       : network donanım bilgileri
+sudo apt -y install broadcom-sta-dkms      : broadcom model driverleri
+  

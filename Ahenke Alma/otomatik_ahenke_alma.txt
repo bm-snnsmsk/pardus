@@ -1,0 +1,2 @@
+sudo systemctl stop ahenk.service
+sudo python3 /usr/share/ahenk/ahenkd.py start 10.47.241.251 test_ldap_user secret

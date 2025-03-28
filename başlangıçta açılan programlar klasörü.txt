@@ -1,0 +1,7 @@
+home/kullanıcı_name/.config/autostart/
+
+rm ~/.config/autostart/xfce4-display-settings.desktop
+
+xfce4-session-logout --logout
+
+

@@ -1,0 +1,4 @@
+sudo apt install ebyn
+
+# kurulum çok kolay 
+# kurulum bittikten sonra =>  Pardus > ebyn > E-Beyanname

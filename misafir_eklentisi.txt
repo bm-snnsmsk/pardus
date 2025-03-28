@@ -1,8 +1,8 @@
 sudo su
-apt install gcc make perl linux-headers-amd64
+apt install gcc make perl linux-headers-amd64 -y
 
 veya
-sudo apt install gcc make perl linux-headers-amd64
+sudo apt install gcc make perl linux-headers-amd64 -y
 
 
 sudo su

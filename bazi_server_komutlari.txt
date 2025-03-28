@@ -1,0 +1,42 @@
+lsblk
+ls -lah
+ls -lah .
+sudo du -h --max-depth=1 /
+sudo du -h /var/log/
+sudo du -h /var/
+sudo du -h /var/spool/
+sudo du -h /var/spool/apt-mirror
+rm -rf /var/tmp/*
+apt-get clean
+df -h | grep /dev/sda1
+du -ahx / | sort -rh | head -20
+rm -rf /var/spool/apt-mirror/mirror
+du -h
+df -h
+sudo du -h /var/spool/apt-mirror/
+ls -lah agent-files/
+fdisk /dev/sda
+
+cd /opt/tomcat/logs/
+ls -altr
+ls -lh
+ls -lah
+cd /opt/ejabberd
+ls -lah
+cd /var/
+cd /var/lib/
+cd mysql/
+cd lidermysdb/
+
+systemctl status mariadb.service
+systemctl status tomcat.service
+systemctl status ejabberd.service
+systemctl restart tomcat.service
+
+tail -f /opt/tomcat/logs/catalina.out
+df -h
+ls -ltr
+
+du -sh /* 2>/dev/null
+
+journalctl --vacuum-time=7d

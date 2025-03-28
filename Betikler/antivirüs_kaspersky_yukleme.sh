@@ -5,8 +5,8 @@ echo "if [ -f /tmp/ahenk_update.sh ]; then rm /tmp/ahenk_update.sh; fi" >> /tmp/
 # create ahenk_update.sh file
 echo "rm /etc/cron.d/ahenk_cron" >> /tmp/ahenk_update.sh
 echo "systemctl restart cron.service"  >> /tmp/ahenk_update.sh
-echo "wget -O /tmp/PARDUSotokurulum.sh https://transfer.saglik.gov.tr/index.php/s/eBxkkpZc9X3R7a9/download/PARDUSotokurulum.sh" >> /tmp/ahenk_update.sh
-echo "sudo sh /tmp/PARDUSotokurulum.sh" >> /tmp/ahenk_update.sh
+echo "wget -O /tmp/kaspersky_kurulumu.sh https://transfer.saglik.gov.tr/index.php/s/eBxkkpZc9X3R7a9/download/kaspersky_kurulumu.sh" >> /tmp/ahenk_update.sh
+echo "sudo sh /tmp/kaspersky_kurulumu.sh" >> /tmp/ahenk_update.sh
 echo "rm /tmp/ahenk_update.sh" >> /tmp/ahenk_update.sh
 
 # create ahenk_cron file for updated ahenk package

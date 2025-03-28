@@ -1,0 +1,27 @@
+ahenk istemciyi kurmak için adımlar; ##By Eyyüp Efeoğlu
+
+ilk olarak  https://docs.liderahenk.org/installation/ahenk/ahenk/ " buradaki sayfadan  
+
+"sudo wget https://repo.liderahenk.org/liderahenk-archive-keyring.asc && sudo apt-key add liderahenk-archive-keyring.asc &&  rm liderahenk-archive-keyring.asc" ##bu komutu uyguluyoruz. masaüstüne bir key dosyası çıkaracak
+
+ardından şu komutu uyguluyoruz ;
+
+sudo printf  "deb [arch=amd64] https://repo.liderahenk.org/liderahenk stable main" | sudo tee -a /etc/apt/sources.list ##bu komut nano /etc/apt/sources.list 'e tırnak içinde olanı ekliyor
+
+##ardından masaüstüne çıkan keyi trusted gpg'ye taşımak için şu komutu uyguluyoruz; 
+
+sudo mv liderahenk-archive-keyring.asrc.1 /etc/apt/trusted.gpg.d/ ##bu kod ascrc uzantılı olan dosyayı trusted gpg'ye uyguluyacak
+
+ardından şu kodu uyguluyoruz; 
+
+
+####key hatası düzeltme start
+sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d/  ##Amaç, eski GPG anahtarlarını trusted.gpg.d/ dizinine taşımak.
+sudo rm /etc/apt/trusted.gpg
+#### key hatası düzeltme end
+
+
+
+daha sonra ise; "sudo apt update / upgrade ve sonra sudo apt install ahenk" diyoruz. ardından bize "Karşılanmamış bağımlıklar" olarak bir hata mesajı veriyorsa;  
+
+"apt --fix-broken install" ##komuutunu kullanıyoruz ve ahenk ile bağımlılıkları yüklemiş oluyor.

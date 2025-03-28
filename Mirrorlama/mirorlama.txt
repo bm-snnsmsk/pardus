@@ -1,0 +1,53 @@
+#https://belge.pardus.org.tr/display/PYMBB/Pardus+Repo+Mirrorlama Yukarıdaki dökümanlarda yapılan değişiklikler bulunmakta.
+
+#Paketleri kuruyoruz
+sudo apt update && sudo apt upgrade -y && sudo apt -y install apt-mirror apache2 gnupg
+
+wget http://repo.liderahenk.org/liderahenk-archive-keyring.asc && sudo apt-key add liderahenk-archive-keyring.asc && rm liderahenk-archive-keyring.asc
+
+sudo add-apt-repository 'deb [arch=amd64] http://repo.liderahenk.org/liderahenk stable main'
+
+#Dosyasında düzenleme yapıyoruz
+sudo nano /etc/apt/mirror.list 
+
+set base_path /var/spool/apt-mirror 
+satırı aktif edilir. (başındaki # işareti kaldırılarak aşağıdaki satırları en alta ekliyoruz)
+
+#deb-amd64 http://depo.pardus.org.tr/pardus yirmibir main non-free contrib
+#deb-amd64 http://depo.pardus.org.tr/guvenlik yirmibir main non-free contrib
+#deb-i386 http://depo.pardus.org.tr/pardus yirmibir main non-free contrib
+#deb-i386 http://depo.pardus.org.tr/guvenlik yirmibir main non-free contrib
+deb-amd64 http://depo.pardus.org.tr/pardus yirmiuc main contrib non-free non-free-firmware
+deb-amd64 http://depo.pardus.org.tr/pardus yirmiuc-deb main contrib non-free non-free-firmware
+deb-amd64 http://depo.pardus.org.tr/guvenlik yirmiuc-deb main contrib non-free non-free-firmware
+deb-i386 http://depo.pardus.org.tr/pardus yirmiuc main contrib non-free non-free-firmware
+deb-i386 http://depo.pardus.org.tr/pardus yirmiuc-deb main contrib non-free non-free-firmware
+deb-i386 http://depo.pardus.org.tr/guvenlik yirmiuc-deb main contrib non-free non-free-firmware
+deb-amd64 http://depo.pardus.org.tr/backports yirmiuc-backports main contrib non-free non-free-firmware
+deb-i386 http://depo.pardus.org.tr/backports yirmiuc-backports main contrib non-free non-free-firmware
+deb-amd64 http://repo.liderahenk.org/liderahenk stable main
+deb-i386 https://repo.liderahenk.org/liderahenk stable main
+clean https://repo.liderahenk.org/liderahenk
+clean http://depo.pardus.org.tr/pardus
+clean http://depo.pardus.org.tr/guvenlik
+clean http://depo.pardus.org.tr/backports
+
+sudo apt update
+sudo su
+su - apt-mirror -c apt-mirror
+
+###############################
+## burdan devam edilecek....
+/bin/bash /var/spool/apt-mirror/var/clean.sh
+
+sudo echo "* 4 * * *  root  /usr/bin/apt-mirror > /var/spool/apt-mirror/var/cron.log" > /etc/cron.d/apt-mirror && sudo systemctl restart cron.service
+
+ln -s /var/spool/apt-mirror/mirror/depo.pardus.org.tr/pardus /var/www/html/pardus 
+ln -s /var/spool/apt-mirror/mirror/depo.pardus.org.tr/guvenlik /var/www/html/guvenlik
+ln -s /var/spool/apt-mirror/mirror/repo.liderahenk.org/liderahenk /var/www/html/liderahenk
+/etc/init.d/apache2 restart
+
+PARDUS makinalara 
+sudo add-apt-repository 'deb http://<depoadresi>/pardus yirmiuc main contrib non-free' 
+sudo add-apt-repository 'deb http://<depoadresi>/pardus yirmiuc-deb main contrib non-free'
+sudo add-apt-repository 'deb http://<depoadresi>/guvenlik yirmiuc-deb main contrib non-free'

@@ -1,0 +1,43 @@
+1 - TARAMA adında klasör oluştur (TARAMA klasör ismi opsiyonel)
+
+2 - TARAMA dizininde terminal aç ve şu kodu çalıştır
+    sudo chmod -R 777 TARAMA/
+
+3 - sudo apt-get install samba*
+
+4 - sudo nano /etc/samba/smb.conf
+	[printers]'den sonra şunları yaz
+	
+[TARAMA]
+comment = TARAMA
+path = /home/mardinism1/Masaüstü/TARAMA
+browseable = yes
+guest ok = yes
+read only = no
+public = yes
+writable = yes
+#create mask = 0775
+#directory mask = 0775
+
+	bunları yazdıktan sonra ctrl+o ile kaydet enter yap sonra ctrl+x ile editörden çıkış yap
+
+5 - sudo smbpasswd -a kullanıcı_adı
+    kullanıcı adı girildikten sonra 2 defa şifre isteyecek şifre gir ENTER'le
+
+6 - sudo /etc/init.d/smbd restart
+
+7 - paylaşımlı cihazın arayüzüne girilir 
+	10.47.247.114
+	Adres Defteri
+        kişiyi seç
+	SMB alanında
+	Host Adı 	     : TARAMA kullanılan bilgisayar IP'si ( 10.47.245.0 )
+	Yol     	     : \TARAMA
+	Oturum Açma Adı      : kullanıcı_adı ( sudo smbpasswd -a kullanıcı_adı kodu girilirken yazılan kullanıcı adı )
+	Oturum Açma Parolası : şifre         (  sudo smbpasswd -a kullanıcı_adı adı girildikten sonra yazılan şifre )
+  	TEST yap 
+	sonuç başarılı ise GÖNDER
+	
+
+
+

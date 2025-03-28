@@ -1,0 +1,11 @@
+#https://github.com/apple/cups/releases/tag/v2.3.6/cups-2.3.6.zip     zip
+#https://github.com/apple/cups/releases/tag/v2.3.6/cups-2.3.6.tar.gz    tar.gz
+
+
+
+#!/bin/bash
+#wget2 https://transfer.saglik.gov.tr/index.php/s/ZMKpjHjbxkMpGiP/download/Akia_linux_6_7_6.deb -P /tmp/
+wget2 https://github.com/apple/cups/releases/tag/v2.3.6/cups-2.3.6.zip
+wget2 https://github.com/apple/cups/releases/tag/v2.3.6/cups-2.3.6.tar.gz
+sudo dpkg -i /tmp/Akia_linux_6_7_6.deb
+sudo apt -f install -y
