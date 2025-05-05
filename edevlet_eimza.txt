@@ -1,0 +1,2 @@
+sudo apt install -y oracle-java8-jre
+wget https://transfer.saglik.gov.tr/index.php/s/QJa5FyjsrsiafGy/download/edevlet_java.desktop

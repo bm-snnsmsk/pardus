@@ -1,0 +1,5 @@
+getent passwd
+systemctl status sssd
+nano /etc/ahenk/ahenk.conf               : burda ahenk ile ilgili bilgiler silindi
+systemctl restart ahenk.service
+python3 /usr/share/ahenk/ahenkd.py start 10.47.241.251 test_ldap_user secret

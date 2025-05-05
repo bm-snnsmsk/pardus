@@ -1,1 +1,17 @@
 sudo nano /etc/apt/sources.list
+
+#####################################################################################################
+
+deb http://depo.pardus.org.tr/pardus yirmiuc main contrib non-free non-free-firmware
+deb http://depo.pardus.org.tr/pardus yirmiuc-deb main contrib non-free non-free-firmware
+deb http://depo.pardus.org.tr/guvenlik yirmiuc-deb main contrib non-free non-free-firmware
+deb [arch=amd64] https://repo.liderahenk.org/liderahenk stable main
+
+#####################################################################################################
+
+deb http://10.47.242.23/pardus yirmiuc main contrib non-free non-free-firmware
+deb http://10.47.242.23/pardus yirmiuc-deb main contrib non-free non-free-firmware
+deb http://10.47.242.23/guvenlik yirmiuc-deb main contrib non-free non-free-firmware
+deb [arch=amd64] http://10.47.242.23/liderahenk stable main
+
+#####################################################################################################
