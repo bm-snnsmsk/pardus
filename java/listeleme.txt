@@ -1,0 +1,2 @@
+apt list -a oracle-java8-jre
+apt install -a oracle-java8-jre=8u241    >> dış monitör çözümü
