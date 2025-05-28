@@ -581,6 +581,7 @@ sudo adduser testuser
 
 ----------------------- CRONTAB ----------------------------------------------------
 crontab -e    == nano /etc/crontab
+crontab -l    == nano /etc/crontab      /// crontab listeleme
 
 * * * * * user date >> /home/user/Masaüstü/saat.txt
 * * * * * /home/user/Masaüstü/saat.sh
