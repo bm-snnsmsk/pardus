@@ -1,3 +1,6 @@
 sudo dhclient -r -v             = ipconfig/release           = ip bırak
 ip a                            : ip control et
 sudo dhclient -v                = ipconfig/renew              = yeni bir ip al
+
+
+systemctl restart networking.service
