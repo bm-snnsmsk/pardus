@@ -1,0 +1,20 @@
+
+doğrulama başarızız hatası 
+
+
+systemctl status sssd.service
+systemctl restart sssd
+nano /etc/sssd/sssd.conf
+journalctl -xeu sssd.service
+ls -altr /etc/sssd/sssd.conf
+chmod 777 /etc/sssd/sssd.conf
+dpkg --configure -a
+nano /etc/os-release
+umount /sys || umount -lf /sys && umount /dev/pts  || umou && exit
+amdgpu-install
+lshw
+lscpu
+lspci
+ls -altr /etc/sssd/sssd.conf
+realm list
+systemctl status sssd

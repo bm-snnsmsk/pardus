@@ -40,3 +40,7 @@ ls -ltr
 du -sh /* 2>/dev/null
 
 journalctl --vacuum-time=7d
+history
+
+
+nano /etc/lider/lider.properties >>> jwt.expiration = 300000 (300.000 milisaniye)    = 5 dakika

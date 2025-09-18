@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo apt purge arksigner-pub -y
+sudo rm -rf /usr/bin/arksigner
+
+wget https://downloads.arksigner.com/files/arksigner-pub-2.3.12.deb -P /tmp/
+#wget http://10.47.242.23/mardin/arksigner-pub-2.3.12.deb -P /tmp/
+
+sudo dpkg -i /tmp/arksigner-pub-2.3.12.deb
+sudo apt install -f -y
+sudo systemctl restart arksignerd.service

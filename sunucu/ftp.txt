@@ -1,0 +1,7 @@
+sudo systemctl status vsftpd
+sudo systemctl start vsftpd
+sudo apt install vsftpd
+
+
+sudo ufw status
+sudo ufw allow 21/tcp

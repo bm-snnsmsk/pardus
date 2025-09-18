@@ -100,7 +100,7 @@ tree ../..                  // iki üst dizinden ağaç yapısına bak
 
 ***********************************************
 tail /var/log/auth.log -F -n 20          :   sürekli açık tut ve logları izle
-tail -f a.txt                            : eş zamanlı dosya izleme
+tail -F a.txt                            : eş zamanlı dosya izleme
 ***********************************************
 
 ####################### klasör oluşturma

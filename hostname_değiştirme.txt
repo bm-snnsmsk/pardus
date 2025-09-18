@@ -1,5 +1,6 @@
-sudo nano /etc/hostname
-
+1 - sudo nano /etc/hostname
+2 - sudo nano /etc/hosts
+3 - reboot
 ----------------------------------
 
 sudo su pico /etc/hostname/

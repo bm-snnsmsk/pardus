@@ -1,0 +1,10 @@
+ilk olarak tty'e girmek lazım ctrl +alt f1 or f2 or f3  (login ekranında) akabinde ilgili kullanıcıya geçiş ve sonra komutlar;
+yetkili kullanıcı ile giriş yap sonra şu kodları çalıştır
+
+ 
+1. sudo chown -R master:master /home/master
+
+2.touch /home/master/.Xauthority
+sudo chown master:master /home/master/.Xauthority
+
+3.sudo systemctl restart lightdm.service

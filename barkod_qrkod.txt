@@ -1,0 +1,5 @@
+apt install glabels -y
+
+
+
+windows için >>> Brother P-touch
