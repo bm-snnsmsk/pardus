@@ -1,0 +1,13 @@
+cut -d: -f1 /etc/group      >>> tüm grupları listeler
+getent group                >>> tüm grupları listeler
+groups                      >>> aktif kullanıcının dahil olduğu grupları listeler
+groups sinan                >>> sinan kullanıcısının dahil olduğu grupları listeler
+
+
+1 - sudo usermod -aG grup_adi kullanici_adi
+2 - newgrp grup_adi
+
+
+1 - sudo usermod -aG sudo sinan
+2 - newgrp sudo
+

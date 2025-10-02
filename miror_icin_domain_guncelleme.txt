@@ -1,0 +1,3 @@
+sudo sed -i 's|repo\.liderahenk\.org/|repo.liderahenk.org.tr/|g' /etc/apt/mirror.list && sudo rm -rf /var/spool/apt-mirror/mirror/repo.liderahenk.org/ && sudo ln -sfn /var/spool/apt-mirror/mirror/repo.liderahenk.org.tr/liderahenk /var/www/html/liderahenk
+
+

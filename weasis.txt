@@ -1,0 +1,38 @@
+curl -o /tmp/weasis_4.6.3-1_amd64.deb https://transfer.saglik.gov.tr/index.php/s/6JRFgALxgR8eGqa/download/weasis_4.6.3-1_amd64.deb
+dpkg -i /tmp/weasis_4.6.3-1_amd64.deb
+sudo wget -O /usr/share/applications/DICOM.desktop https://transfer.saglik.gov.tr/index.php/s/3yKjBaCwF2TiYr8/download/DICOM2.desktop
+for kullanici_dizini in /home/*/; do
+    kullanici=$(basename "$kullanici_dizini")
+    masaustu_dizini="$kullanici_dizini/Masaüstü"
+
+    if [ -d "$masaustu_dizini" ]; then
+        sudo rm -f "$masaustu_dizini/DICOM.desktop"
+        sudo ln -s /usr/share/applications/DICOM.desktop "$masaustu_dizini/DICOM.desktop"
+        sudo ln -s /usr/share/applications/DICOM.desktop /etc/skel/Masaüstü/DICOM.desktop
+        sudo chown "$kullanici:$kullanici" "$masaustu_dizini/DICOM.desktop"
+    fi
+done
+
+https://github.com/nroduit/Weasis/releases/download/v4.6.3/weasis_4.6.3-1_amd64.deb
+
+###############################################•
+silinen betik
+
+#!/bin/bash
+
+kaynak_url="http://10.47.242.23/mardin/weasis/"
+
+curl -o /tmp/weasis_4.6.3-1_amd64.deb $kaynak_url/weasis_4.6.3-1_amd64.deb
+dpkg -i /tmp/weasis_4.6.3-1_amd64.deb
+sudo wget -O /usr/share/applications/DICOM.desktop $kaynak_url/DICOM.desktop
+for kullanici_dizini in /home/*/; do
+    kullanici=$(basename "$kullanici_dizini")
+    masaustu_dizini="$kullanici_dizini/Masaüstü"
+
+    if [ -d "$masaustu_dizini" ]; then
+        sudo rm -f "$masaustu_dizini/DICOM.desktop"
+        sudo ln -s /usr/share/applications/DICOM.desktop "$masaustu_dizini/DICOM.desktop"
+        sudo ln -s /usr/share/applications/DICOM.desktop /etc/skel/Masaüstü/DICOM.desktop
+        sudo chown "$kullanici:$kullanici" "$masaustu_dizini/DICOM.desktop"
+    fi
+done

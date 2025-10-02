@@ -1,0 +1,3 @@
+chmod +x ~/Masaüstü/google-chrome.desktop
+gio set ~/Masaüstü/chrome.desktop metadata::trusted true
+xfdesktop --reload

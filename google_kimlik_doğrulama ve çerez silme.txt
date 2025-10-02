@@ -1,0 +1,10 @@
+rm -rf ~/.config/google-chrome
+rm -rf ~/.cache/google-chrome
+
+pkill -u mardineah chrome
+sudo rm /home/mardineah/.config/google-chrome
+sudo rm /home/mardineah/.cache/google-chrome
+
+sudo apt purge gnome-keyring -y
+
+sudo rm -f /usr/share/keyrings/*

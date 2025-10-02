@@ -3,3 +3,27 @@ sudo printf  "deb [arch=amd64] https://repo.liderahenk.org/liderahenk stable mai
 sudo apt update
 sudo apt install ahenk
 sudo ahenk-register
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################
+ln -s /var/spool/apt-mirror/mirror/repo.liderahenk.org.tr/liderahenk /var/www/html/liderahenk
+
+/etc/init.d/apache2 restart
+
+
+tail -f /tmp/aydo23_logfile.log
+
+
+
+

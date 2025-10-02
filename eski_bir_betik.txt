@@ -1,0 +1,37 @@
+#!/bin/bash
+
+user=$(who |cut -d" " -f1)
+sudo rm -rf /home/$user/sbassl.crt
+sudo rm -rf /home/$user/sbassl-ca.crt
+sudo rm -rf /home/$user/sba-ca.crt   
+sudo rm -rf /home/$user/ssl-inspection.crt
+#wget http://10.59.5.42/isokur/pardus/diger/cert/sbassl.der -P /home/$user/
+#openssl x509 -inform DER -outform PEM -in sbassl.der -out sbassl.crt
+wget http://10.47.242.23/mardin/sertifika/sba-ca.crt -P /home/$user/
+wget http://10.47.242.23/mardin/sertifika/ssl-inspection.crt -P /home/$user/
+sudo mv sba-ca.crt /usr/local/share/ca-certificates/.
+sudo mv ssl-inspection.crt /usr/local/share/ca-certificates/.
+sudo update-ca-certificates
+
+profil=$(find /home/$user/.mozilla/firefox -maxdepth 1 -type d -name "*.default")
+profil2=$(find /home/$user/.mozilla/firefox -maxdepth 1 -type d -name "*.default-esr")
+sudo apt install libnss3-tools curl -y
+#certutil -A -d $profil -n "sbassl.der" -t "TC,,"
+certutil -A -d $profil -n "sbassl" -t "C,," -i /home/$user/sba-ca.crt
+certutil -A -d $profil2 -n "sbassl" -t "C,," -i /home/$user/sba-ca.crt
+certutil -A -d $profil -n "sba-ca" -t "C,," -i /home/$user/ssl-inspection.crt
+certutil -A -d $profil2 -n "sba-ca" -t "C,," -i /home/$user/ssl-inspection.crt
+
+
+sudo mkdir /etc/skel/.pki
+sudo mkdir /etc/skel/.pki/nssdb
+mkdir /home/$user/.pki
+mkdir /home/$user/.pki/nssdb
+
+curl -k -o "sba-ca.crt" "http://10.47.242.23/mardin/sertifika/sba-ca.crt"
+certutil -d sql:/home/$user/.pki/nssdb -A -t TC -n "http://10.47.242.23/mardin/sertifika/" -i sba-ca.crt
+sudo certutil -d sql:/etc/skel/.pki/nssdb -A -t TC -n "http://10.47.242.23/mardin/sertifika/" -i sba-ca.crt
+
+curl -k -o "ssl-inspection.crt" "http://10.47.242.23/mardin/sertifika/ssl-inspection.crt"
+certutil -d sql:/home/$user/.pki/nssdb -A -t TC -n "http://10.47.242.23/mardin/sertifika/" -i ssl-inspection.crt
+sudo certutil -d sql:/etc/skel/.pki/nssdb -A -t TC -n "http://10.47.242.23/mardin/sertifika/" -i ssl-inspection.crt

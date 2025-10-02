@@ -1,0 +1,10 @@
+https://local.pwsigner.ark-teknoloji.com:16357/    >>> port açoık mı
+
+sudo ss -lntp | grep 16357             >>> port açoık mı
+
+
+dpkg -l | grep libssl
+openssl version
+
+sudo ss -lntp | grep 16357
+

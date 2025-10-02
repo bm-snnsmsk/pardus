@@ -1,0 +1,46 @@
+## temizlik
+sudo apt purge -y arksigner-pub
+sudo apt autoremove -y
+sudo apt autoclean -y
+sudo rm -rf /usr/bin/arksigner ***dpkg: uyarı: arksigner-pub kaldırılırken '/usr/bin/arksigner' dizini boş olmadığı için kaldırılmadı hatası verirse bir daha bastır
+sudo rm -rf /opt/ArkSigner
+sudo rm -f /usr/share/applications/arksigner.desktop
+sudo rm -f ~/.local/share/applications/arksigner.desktop
+sudo rm -f ~/Masaüstü/arksigner.desktop
+sudo rm -f /etc/skel/Masaüstü/arksigner.desktop
+
+***şayet mime ile oynanmışsa;
+sudo rm -f ~/.config/mimeapps.list
+sudo rm -f ~/.local/share/applications/mimeapps.list
+sudo rm -f /etc/xdg/mimeapps.list
+
+***chrome ile alakalı;
+sudo rm -rf /etc/opt/chrome/native-messaging-hosts/
+sudo rm -rf ~/.config/google-chrome/NativeMessagingHosts/
+
+***libssl 1.0 paketi ve Q5 yüklü ise
+sudo apt purge -y libssl1.0.0
+sudo apt purge -y libqt5websockets5 libqt5network5 libqt5core5a libqt5gui5 libqt5widgets5
+
+***Arksigner servisi
+sudo rm -f /etc/systemd/system/arksignerd.service
+sudo systemctl daemon-reload
+
+### Güncellemeler 
+***desktopları güncelleme
+sudo update-desktop-database /usr/share/applications/
+sudo update-mime-database /usr/share/mime
+
+***Daha sonra uygulanacaklar;
+sudo apt autoremove -y
+sudo apt autoclean -y
+
+## mevcut oturumu yenileme resetlemeden;
+pkill -KILL -u $USER
+
+## kullanıcı giriş yaptıktan sonra
+#arksigner yükle
+wget https://downloads.arksigner.com/files/arksigner-pub-2.3.12.deb -P /tmp/
+sudo dpkg -i /tmp/arksigner-pub-2.3.12.deb
+sudo apt install -f -y
+sudo systemctl restart arksignerd.service

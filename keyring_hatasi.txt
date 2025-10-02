@@ -1,0 +1,5 @@
+>>>> lider makine
+sudo wget https://repo.liderahenk.org.tr/liderahenk-archive-keyring.asc && sudo mv liderahenk-archive-keyring.asc /etc/apt/trusted.gpg.d/      
+
+>>>> kullanıcı makine
+sudo apt update

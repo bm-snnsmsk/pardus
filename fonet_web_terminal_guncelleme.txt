@@ -1,0 +1,4 @@
+Fonet Web versiyonunu güncellemek için, 
+Pardus işletim sistemi üzerinde aşağıdaki tuş kombinasyonunu kullanabilirsiniz: 
+
+Ctrl + Shift + R
