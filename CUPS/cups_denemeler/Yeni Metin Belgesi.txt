@@ -1,4 +1,0 @@
-#!/bin/bash
-wget2 https://transfer.saglik.gov.tr/index.php/s/ZMKpjHjbxkMpGiP/download/Akia_linux_6_7_6.deb -P /tmp/
-sudo dpkg -i /tmp/Akia_linux_6_7_6.deb
-sudo apt -f install -y

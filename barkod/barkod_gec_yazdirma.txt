@@ -1,0 +1,2 @@
+sudo lpadmin -p barkod_adı -o usb-unidir-default=true
+sudo lpadmin -p barkod_adı -o usb-no-reattach-default=true

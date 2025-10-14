@@ -1,0 +1,14 @@
+>>> komut
+qrencode -o ubuntu-tr.png -s 10 "Linux özgürlüktür"      
+
+
+>>> ui app
+wget -o qtqr12.deb https://launchpad.net/qr-tools/2.0/2.1/+download/qtqr_2.1-0~47~ubuntu24.04.1_all.deb
+dpkg -i qtqr_2.1-0~47~ubuntu24.04.1_all.deb 
+
+qtqr   
+
+
+
+
+

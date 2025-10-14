@@ -1,7 +1,0 @@
-https://github.com/apple/cups/releases/tag/v2.3.6/
-
-https://github.com/apple/cups
-
-
-lpinfo -m                            : cupsta mevut driverlar
-lpinfo -v                            : müsait yazıcılar

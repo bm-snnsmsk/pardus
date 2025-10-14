@@ -8,3 +8,6 @@ su yetkili_username
 sudo su
 cp -r dosya/klasor kopya_yolu
 sudo chown username dosya/klasor
+
+
+
