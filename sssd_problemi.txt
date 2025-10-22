@@ -1,3 +1,5 @@
+sudo apt install sssd -y
+
 getent passwd
 getent passwd kulanıcı_adi
 systemctl status sssd
