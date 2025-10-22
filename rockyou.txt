@@ -1,0 +1,8 @@
+zip2john abc.zip > abc.hash
+john abc.hash --wordlist=/usr/share/wordlists/rockyou.txt
+
+wc -l dosya.txt
+
+
+gunzip rockyou.txt.gz
+gzip -d -k rockyou.txt.gz

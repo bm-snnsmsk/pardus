@@ -1,0 +1,9 @@
+echo $LANG             >>> tr_TR.UTF-8    olmalı
+
+değilse
+export LANG=tr_TR.UTF-8
+
+
+
+## man kılavuz tr yapılmış olur
+sudo apt install manpages-tr

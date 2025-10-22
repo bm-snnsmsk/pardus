@@ -1,0 +1,29 @@
+echo "sinan simsek" | cut -c1-7                    >>> sinan s
+echo "sinan simsek" | cut -c 1-7                   >>> sinan s
+echo "123456789" | cut -c 5                        >>> 5
+echo "123456789" | cut -c 5-                       >>> 56789
+
+echo "sinan,baran,emine,belçim" | cut -d "," -f2   >>> belçim
+echo "sinan,baran,emine,belçim" | cut -d "," -f2-  >>> baran,emine,belçim
+
+cut -d ":" -f 1 /etc/passwd                        >>> dosyadaki 1. sutunun tamamı tüm kulanıcılar
+cut -d ":" -f1 /etc/passwd                         >>> dosyadaki 1. sutunun tamamı tüm kulanıcılar
+
+
+**********************************************************************************************************
+
+cut ********************************
+echo "ad,soyad,yaş" | cut -d',' -f2                        >>> soyad
+
+
+awk ********************************
+echo "ad,soyad,yaş" | awk -F',' '{print 2'                 >>> soyad
+
+
+
+sed ************************************
+echo "ad,soyad,yaş" | sed 's/^[^,]*,[^,]*,.*/\1/'           >>> soyad
+
+
+
+
